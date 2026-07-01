@@ -13,17 +13,16 @@
   --cream: #FDF8F3; --cream-dark: #F5EDE2;
   --dark: #2C2C2C; --mid: #5A5A5A; --light: #9A9A9A;
   --green: #25D366; --green-dark: #1DB954;
-  --bubble-bot: #FFFFFF; --wa-bg: #ECE5DD;
 }
 html { scroll-behavior: smooth; }
 body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--dark); overflow-x: hidden; }
 
-/* ═══════ BANNER ═══════ */
-.banner { background: var(--coral); color: white; text-align: center; padding: 10px 20px; font-size: 13px; font-weight: 500; letter-spacing: .04em; position: relative; z-index: 10; }
+/* BANNER */
+.banner { background: var(--coral); color: white; text-align: center; padding: 10px 20px; font-size: 13px; font-weight: 500; letter-spacing: .04em; }
 .banner strong { background: rgba(255,255,255,.2); padding: 2px 10px; border-radius: 20px; margin-left: 8px; }
 
-/* ═══════ NAV ═══════ */
-nav { background: rgba(253,248,243,.95); backdrop-filter: blur(12px); padding: 16px 48px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(0,0,0,.06); }
+/* NAV */
+nav { background: rgba(253,248,243,.95); backdrop-filter: blur(12px); padding: 14px 48px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(0,0,0,.06); }
 .nav-logo { font-family: 'Playfair Display', serif; font-size: 19px; color: var(--dark); text-decoration: none; display: flex; align-items: center; gap: 10px; }
 .nav-logo em { color: var(--turq); font-style: italic; }
 .nav-logo .logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--coral); display: inline-block; }
@@ -33,104 +32,110 @@ nav { background: rgba(253,248,243,.95); backdrop-filter: blur(12px); padding: 1
 .nav-cta { background: var(--coral); color: white; padding: 10px 22px; border-radius: 50px; font-size: 13px; font-weight: 600; text-decoration: none; transition: background .2s, transform .2s; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; }
 .nav-cta:hover { background: var(--coral-dark); transform: translateY(-1px); }
 
-/* ═══════ HERO ═══════ */
-.hero { min-height: 92vh; display: grid; place-items: center; text-align: center; padding: 80px 40px; background: var(--cream); position: relative; overflow: hidden; }
+/* HERO */
+.hero { min-height: 88vh; display: grid; place-items: center; text-align: center; padding: 70px 40px; background: var(--cream); position: relative; overflow: hidden; }
 .hero-bg1 { position: absolute; top: -160px; right: -160px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, var(--turq-pale), transparent 65%); pointer-events: none; }
 .hero-bg2 { position: absolute; bottom: -120px; left: -120px; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, var(--coral-pale), transparent 65%); pointer-events: none; }
 .hero-content { position: relative; z-index: 2; max-width: 780px; }
-.hero-logo { width: 160px; height: 160px; display: flex; align-items: center; justify-content: center; margin: 0 auto 28px; border-radius: 50%; overflow: hidden; }
-.hero-logo img { width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scale(1.4); border-radius: 50%; }
-.hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: var(--turq-pale); color: var(--turq); padding: 8px 20px; border-radius: 50px; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 28px; border: 1px solid rgba(61,204,199,.25); }
+.hero-logo { width: 150px; height: 150px; display: flex; align-items: center; justify-content: center; margin: 0 auto 26px; border-radius: 50%; overflow: hidden; box-shadow: 0 8px 36px rgba(0,0,0,.10); }
+.hero-logo img { width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scale(1.4); }
+.hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: var(--turq-pale); color: var(--turq); padding: 8px 20px; border-radius: 50px; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 26px; border: 1px solid rgba(61,204,199,.25); }
 .hero-eyebrow span { width: 6px; height: 6px; border-radius: 50%; background: var(--turq); }
-.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(38px, 6vw, 68px); line-height: 1.1; font-weight: 600; margin-bottom: 24px; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5.5vw, 64px); line-height: 1.12; font-weight: 600; margin-bottom: 22px; }
 .hero h1 em { font-style: italic; color: var(--turq); }
 .hero h1 .coral { color: var(--coral); }
 .hero-sub { font-size: 18px; color: var(--mid); font-weight: 300; line-height: 1.8; max-width: 560px; margin: 0 auto 40px; }
-.hero-cta { display: inline-flex; align-items: center; gap: 12px; background: var(--coral); color: white; padding: 18px 44px; border-radius: 50px; font-size: 17px; font-weight: 600; text-decoration: none; box-shadow: 0 8px 32px rgba(244,124,124,.4); transition: all .3s; position: relative; overflow: hidden; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+.hero-cta { display: inline-flex; align-items: center; gap: 12px; background: var(--coral); color: white; padding: 18px 44px; border-radius: 50px; font-size: 17px; font-weight: 600; text-decoration: none; box-shadow: 0 8px 32px rgba(244,124,124,.4); transition: all .3s; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; }
 .hero-cta:hover { background: var(--coral-dark); transform: translateY(-3px) scale(1.02); box-shadow: 0 14px 44px rgba(244,124,124,.55); }
 .hero-cta .cta-icon { font-size: 20px; transition: transform .3s; }
 .hero-cta:hover .cta-icon { transform: rotate(15deg) scale(1.2); }
-.hero-sub-cta { margin-top: 16px; font-size: 13px; color: var(--light); }
-.hero-sub-cta a { color: var(--turq); text-decoration: none; font-weight: 500; cursor: pointer; }
-.hero-cupos { display: inline-flex; align-items: center; gap: 16px; margin-top: 52px; background: white; padding: 16px 32px; border-radius: 20px; box-shadow: 0 4px 24px rgba(0,0,0,.08); }
-.cupos-label { font-size: 13px; color: var(--mid); }
-.cupos-dots { display: flex; gap: 8px; }
-.cupo-dot { width: 16px; height: 16px; border-radius: 50%; }
-.cupo-dot.taken { background: var(--coral); }
-.cupo-dot.available { background: var(--turq); }
-.cupos-text { font-size: 13px; font-weight: 600; color: var(--turq); }
+.hero-badges { display: flex; gap: 28px; margin-top: 48px; justify-content: center; flex-wrap: wrap; }
+.hbadge { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.hbadge-n { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600; color: var(--turq); }
+.hbadge-l { font-size: 11px; color: var(--light); letter-spacing: .06em; text-transform: uppercase; }
 
-/* ═══════ SECCIONES ═══════ */
-.section { padding: 96px 80px; }
+/* SECCIONES */
+.section { padding: 88px 80px; }
 .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--coral); margin-bottom: 14px; }
 .eyebrow::before, .eyebrow::after { content: '·'; opacity: .5; }
-h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3.5vw, 46px); font-weight: 600; line-height: 1.2; margin-bottom: 16px; }
+.eyebrow-center { justify-content: center; }
+h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3.5vw, 44px); font-weight: 600; line-height: 1.2; margin-bottom: 16px; }
 h2 em { font-style: italic; color: var(--turq); }
 .section-sub { font-size: 16px; color: var(--mid); font-weight: 300; line-height: 1.8; max-width: 520px; margin: 0 auto; }
 
-/* ═══════ CARRUSEL ═══════ */
+/* ═══════ CARRUSEL (más pequeño y elegante) ═══════ */
 .carrusel-section { background: var(--cream-dark); overflow: hidden; }
-.carrusel-header { text-align: center; margin-bottom: 52px; }
-.carrusel-wrap { position: relative; }
-.carrusel-track-outer { overflow: hidden; border-radius: 24px; }
-.carrusel-track { display: flex; gap: 24px; transition: transform .45s cubic-bezier(.4,0,.2,1); will-change: transform; }
-.carrusel-slide { min-width: calc(33.33% - 16px); border-radius: 24px; overflow: hidden; position: relative; background: var(--cream); box-shadow: 0 4px 28px rgba(0,0,0,.08); transition: transform .3s, box-shadow .3s; cursor: pointer; }
-.carrusel-slide:hover { transform: translateY(-6px); box-shadow: 0 14px 48px rgba(0,0,0,.13); }
-.slide-img { height: 340px; display: flex; align-items: flex-start; justify-content: flex-start; position: relative; overflow: hidden; }
-.slide-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.25) 0%, transparent 30%); pointer-events: none; }
-.slide-img-bg { position: absolute; inset: 0; opacity: .15; font-size: 120px; display: flex; align-items: center; justify-content: center; }
-.slide-tag { position: absolute; top: 16px; left: 16px; background: white; padding: 6px 14px; border-radius: 20px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--dark); z-index: 3; box-shadow: 0 2px 8px rgba(0,0,0,.15); }
-.slide-emoji { font-size: 56px; position: relative; z-index: 2; }
-.slide-hint { font-size: 12px; color: var(--light); position: relative; z-index: 2; }
-.slide-body { padding: 24px 28px; }
-.slide-body h4 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; margin-bottom: 6px; }
-.slide-body p { font-size: 14px; color: var(--mid); font-weight: 300; line-height: 1.7; }
-.slide-c1 .slide-img { background: linear-gradient(135deg, #FEF0F0, #FAD0D0); }
-.slide-c2 .slide-img { background: linear-gradient(135deg, #E6F9F8, #C8F0EE); }
-.slide-c3 .slide-img { background: linear-gradient(135deg, #FFF8E6, #FAE8B0); }
-.slide-c4 .slide-img { background: linear-gradient(135deg, #F0E6FF, #DCC8F8); }
-.slide-c5 .slide-img { background: linear-gradient(135deg, #E6FFE6, #C8EEC8); }
-.slide-c6 .slide-img { background: linear-gradient(135deg, #FFE6F0, #F8C8DC); }
-.carrusel-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 52px; height: 52px; border-radius: 50%; background: white; border: none; cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,.14); display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--dark); z-index: 10; transition: all .2s; }
+.carrusel-header { text-align: center; margin-bottom: 44px; }
+.carrusel-wrap { position: relative; max-width: 1000px; margin: 0 auto; }
+.carrusel-track-outer { overflow: hidden; padding: 8px; }
+.carrusel-track { display: flex; gap: 20px; transition: transform .45s cubic-bezier(.4,0,.2,1); will-change: transform; }
+.carrusel-slide { min-width: calc(25% - 15px); border-radius: 18px; overflow: hidden; position: relative; background: var(--cream); box-shadow: 0 4px 20px rgba(0,0,0,.08); transition: transform .3s, box-shadow .3s; }
+.carrusel-slide:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(0,0,0,.13); }
+.slide-img { height: 220px; position: relative; overflow: hidden; cursor: zoom-in; }
+.slide-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.carrusel-slide:hover .slide-img img { transform: scale(1.06); }
+.slide-img::after { content: '🔍'; position: absolute; bottom: 10px; right: 10px; background: rgba(255,255,255,.9); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; opacity: 0; transition: opacity .3s; }
+.slide-img:hover::after { opacity: 1; }
+.slide-tag { position: absolute; top: 12px; left: 12px; background: white; padding: 5px 12px; border-radius: 20px; font-size: 10px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--dark); z-index: 3; box-shadow: 0 2px 8px rgba(0,0,0,.15); }
+.slide-tag.fav { background: var(--coral); color: white; }
+.slide-body { padding: 16px 18px; }
+.slide-body h4 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.slide-body p { font-size: 12.5px; color: var(--mid); font-weight: 300; line-height: 1.55; }
+.carrusel-btn { position: absolute; top: 40%; transform: translateY(-50%); width: 46px; height: 46px; border-radius: 50%; background: white; border: none; cursor: pointer; box-shadow: 0 4px 18px rgba(0,0,0,.14); display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--dark); z-index: 10; transition: all .2s; }
 .carrusel-btn:hover { background: var(--turq); color: white; transform: translateY(-50%) scale(1.08); }
-.btn-prev { left: -26px; }
-.btn-next { right: -26px; }
-.carrusel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 32px; }
+.btn-prev { left: -18px; }
+.btn-next { right: -18px; }
+.carrusel-dots { display: flex; justify-content: center; gap: 7px; margin-top: 28px; }
 .c-dot { width: 8px; height: 8px; border-radius: 50%; background: #D5CCC4; border: none; cursor: pointer; transition: all .25s; padding: 0; }
-.c-dot.active { width: 24px; border-radius: 4px; background: var(--turq); }
-.swipe-hint { text-align: center; margin-top: 16px; font-size: 12px; color: var(--light); }
+.c-dot.active { width: 22px; border-radius: 4px; background: var(--turq); }
+.swipe-hint { text-align: center; margin-top: 14px; font-size: 12px; color: var(--light); }
+.tiktok-cta { display: inline-flex; align-items: center; gap: 10px; background: var(--dark); color: white; padding: 12px 26px; border-radius: 50px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all .25s; box-shadow: 0 4px 18px rgba(0,0,0,.15); }
+.tiktok-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 26px rgba(0,0,0,.25); }
 
-/* ═══════ CUPOS ═══════ */
-.cupos-section { background: var(--turq); color: white; text-align: center; padding: 80px 40px; position: relative; overflow: hidden; }
-.cupos-section::before { content: ''; position: absolute; top: -80px; left: 50%; transform: translateX(-50%); width: 500px; height: 500px; border-radius: 50%; background: rgba(255,255,255,.05); pointer-events: none; }
-.cupos-section .eyebrow { color: rgba(255,255,255,.65); }
-.cupos-section h2 { color: white; margin-bottom: 12px; }
-.cupos-section h2 em { color: rgba(255,255,255,.75); }
-.cupos-section .section-sub { color: rgba(255,255,255,.7); margin-bottom: 44px; }
-.cupos-visual { display: inline-flex; gap: 20px; background: rgba(255,255,255,.12); padding: 28px 40px; border-radius: 24px; border: 1px solid rgba(255,255,255,.2); margin-bottom: 32px; }
-.cupo-card { width: 100px; height: 120px; border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; transition: transform .3s; }
-.cupo-card:hover { transform: translateY(-4px); }
-.cupo-card.taken { background: rgba(244,124,124,.25); border: 2px solid rgba(244,124,124,.5); }
-.cupo-card.available { background: rgba(255,255,255,.15); border: 2px solid rgba(255,255,255,.4); }
-.cupo-card .cupo-ic { font-size: 28px; }
-.cupo-card .cupo-st { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
-.cupo-card.taken .cupo-st { color: rgba(255,255,255,.6); }
-.cupo-card.available .cupo-st { color: rgba(255,255,255,.85); }
-.cupos-num { font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 600; color: white; display: block; line-height: 1; }
-.cupos-num-label { font-size: 14px; color: rgba(255,255,255,.65); margin-top: 4px; }
-.cupos-urgencia { background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.25); border-radius: 12px; padding: 14px 28px; display: inline-block; font-size: 14px; color: rgba(255,255,255,.85); margin: 28px 0; }
-.cupos-urgencia strong { color: white; }
+/* ═══════ LIGHTBOX (foto en tamaño real) ═══════ */
+.lightbox { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,.85); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity .3s; padding: 20px; }
+.lightbox.open { opacity: 1; pointer-events: all; }
+.lightbox img { max-width: 90%; max-height: 85vh; border-radius: 12px; box-shadow: 0 20px 80px rgba(0,0,0,.5); }
+.lightbox-close { position: absolute; top: 24px; right: 28px; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,.15); border: none; color: white; font-size: 24px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .2s; }
+.lightbox-close:hover { background: rgba(255,255,255,.3); }
+.lightbox-cap { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); color: white; font-size: 14px; background: rgba(0,0,0,.5); padding: 8px 18px; border-radius: 20px; }
 
-/* ═══════ ACORDEÓN ═══════ */
+/* ═══════ INTRO / SOBRE CAROLINA ═══════ */
+.intro-section { background: var(--cream-dark); padding: 72px 80px; }
+.intro-wrap { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 220px 1fr; gap: 48px; align-items: center; }
+.intro-foto { width: 220px; height: 220px; border-radius: 50%; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,.1); flex-shrink: 0; }
+.intro-foto img { width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scale(1.4); }
+.intro-texto h2 { margin-bottom: 16px; }
+.intro-texto p { font-size: 15px; color: var(--mid); font-weight: 300; line-height: 1.8; margin-bottom: 14px; }
+.intro-firma { font-family: 'Playfair Display', serif; font-style: italic; color: var(--coral) !important; font-size: 16px !important; margin-top: 4px; }
+
+/* ═══════ CÓMO FUNCIONA + CUPOS (compacto) ═══════ */
 .como-section { background: var(--cream); }
-.como-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-.como-texto .section-sub { margin: 0 0 12px; text-align: left; }
-.como-nota { font-size: 13px; color: var(--light); font-style: italic; margin-top: 24px; }
+.como-header { text-align: center; margin-bottom: 44px; }
+.como-header .section-sub { margin: 0 auto; }
+.como-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: stretch; }
+.como-nota { font-size: 13px; color: var(--light); font-style: italic; margin-top: 32px; }
+
+/* Panel de cupos compacto */
+.cupos-panel { background: var(--turq); color: white; border-radius: 24px; padding: 32px 28px; display: flex; flex-direction: column; justify-content: center; text-align: center; position: relative; overflow: hidden; }
+.cupos-panel::before { content: ''; position: absolute; top: -40px; right: -40px; width: 180px; height: 180px; border-radius: 50%; background: rgba(255,255,255,.08); pointer-events: none; }
+.cupos-panel-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.7); }
+.cupos-panel h3 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 600; line-height: 1.15; margin: 10px 0; color: white; }
+.cupos-panel h3 em { font-style: italic; color: rgba(255,255,255,.8); }
+.cupos-panel-head p { font-size: 13px; color: rgba(255,255,255,.75); font-weight: 300; line-height: 1.6; margin-bottom: 22px; }
+.cupos-dots-row { display: flex; gap: 10px; justify-content: center; margin-bottom: 14px; position: relative; z-index: 2; }
+.cupo-mini { width: 46px; height: 46px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+.cupo-mini.taken { background: rgba(244,124,124,.3); border: 1.5px solid rgba(244,124,124,.5); }
+.cupo-mini.free { background: rgba(255,255,255,.2); border: 1.5px solid rgba(255,255,255,.5); }
+.cupos-panel-status { font-size: 14px; color: rgba(255,255,255,.9); margin-bottom: 22px; }
+.cupos-panel-status strong { color: white; }
+.cupos-panel-btn { display: inline-block; background: white; color: var(--turq-dark); padding: 13px 30px; border-radius: 50px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all .25s; position: relative; z-index: 2; }
+.cupos-panel-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.15); }
 .acordeon { display: flex; flex-direction: column; gap: 12px; }
 .ac-item { border-radius: 18px; overflow: hidden; border: 2px solid transparent; background: white; box-shadow: 0 2px 16px rgba(0,0,0,.05); transition: border-color .3s, box-shadow .3s; }
 .ac-item.active { border-color: var(--turq); box-shadow: 0 6px 32px rgba(61,204,199,.18); }
 .ac-header { display: flex; align-items: center; gap: 18px; padding: 22px 24px; cursor: pointer; user-select: none; }
-.ac-num { width: 48px; height: 48px; border-radius: 14px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 600; background: var(--cream-dark); color: var(--mid); transition: background .3s, color .3s; }
+.ac-num { width: 48px; height: 48px; border-radius: 14px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 600; background: var(--cream-dark); color: var(--mid); transition: all .3s; }
 .ac-item.active .ac-num { background: var(--turq); color: white; }
 .ac-title { font-size: 16px; font-weight: 600; flex: 1; }
 .ac-arrow { font-size: 20px; color: var(--light); transition: transform .3s; }
@@ -140,21 +145,26 @@ h2 em { font-style: italic; color: var(--turq); }
 .ac-body p { font-size: 15px; color: var(--mid); font-weight: 300; line-height: 1.8; }
 .ac-body .ac-tag { display: inline-block; background: var(--turq-pale); color: var(--turq); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-top: 12px; }
 
-/* ═══════ CONTACTO / WHATSAPP ═══════ */
-.wa-section { background: var(--cream-dark); text-align: center; padding: 96px 40px; position: relative; overflow: hidden; }
-.wa-section-content { position: relative; z-index: 2; max-width: 620px; margin: 0 auto; }
-.wa-section h2 { margin-bottom: 16px; }
-.wa-section .section-sub { margin-bottom: 44px; }
-.wa-btn-big { display: inline-flex; align-items: center; gap: 14px; background: var(--coral); color: white; padding: 20px 48px; border-radius: 50px; font-size: 18px; font-weight: 700; text-decoration: none; box-shadow: 0 8px 36px rgba(244,124,124,.4); transition: all .3s; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; }
-.wa-btn-big:hover { background: var(--coral-dark); transform: translateY(-3px) scale(1.02); box-shadow: 0 14px 48px rgba(244,124,124,.55); }
-.wa-btn-big .b-icon { font-size: 24px; transition: transform .3s; }
-.wa-btn-big:hover .b-icon { transform: scale(1.15); }
-.wa-note { margin-top: 20px; font-size: 13px; color: var(--light); }
-.wa-note strong { color: var(--turq); }
-.wa-trust { display: flex; gap: 32px; justify-content: center; margin-top: 48px; flex-wrap: wrap; }
-.trust-item { display: flex; flex-direction: column; align-items: center; gap: 6px; }
-.trust-icon { font-size: 24px; }
-.trust-text { font-size: 12px; color: var(--light); font-weight: 500; text-transform: uppercase; letter-spacing: .06em; }
+/* ═══════ FORMULARIO ═══════ */
+.form-section { background: var(--cream-dark); }
+.form-wrap { max-width: 620px; margin: 0 auto; }
+.form-header { text-align: center; margin-bottom: 36px; }
+.form-header .eyebrow { justify-content: center; }
+.form-header .section-sub { margin: 0 auto; }
+.form-card { background: white; border-radius: 28px; box-shadow: 0 12px 50px rgba(0,0,0,.08); padding: 40px; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--dark); margin-bottom: 7px; letter-spacing: .02em; }
+.form-group label .req { color: var(--coral); }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 13px 16px; border: 1.5px solid #E5DDD4; border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--dark); background: var(--cream); transition: border-color .2s, box-shadow .2s; outline: none; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--turq); box-shadow: 0 0 0 3px rgba(61,204,199,.12); background: white; }
+.form-group textarea { min-height: 90px; resize: vertical; }
+.form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238A8A8A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.wa-submit { width: 100%; margin-top: 8px; display: inline-flex; align-items: center; justify-content: center; gap: 12px; background: var(--green); color: white; padding: 17px; border-radius: 50px; font-size: 16px; font-weight: 700; text-decoration: none; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all .25s; box-shadow: 0 6px 24px rgba(37,211,102,.35); }
+.wa-submit:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 10px 32px rgba(37,211,102,.5); }
+.form-alt { text-align: center; margin-top: 16px; font-size: 13px; color: var(--light); }
+.form-alt a { color: var(--turq); text-decoration: none; font-weight: 500; }
+.form-nota { text-align: center; font-size: 12px; color: var(--light); margin-top: 18px; line-height: 1.6; }
 
 /* ═══════ FOOTER ═══════ */
 footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 52px 80px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
@@ -166,181 +176,45 @@ footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 52px 80
 .footer-links a:hover { color: var(--turq); }
 .footer-badge { background: rgba(61,204,199,.12); border: 1px solid rgba(61,204,199,.2); color: var(--turq); font-size: 12px; padding: 6px 16px; border-radius: 20px; }
 
-/* ═══════════════════════════════════════ */
-/*   CHAT FLOTANTE (AGENTE INTEGRADO)      */
-/* ═══════════════════════════════════════ */
-.chat-fab { position: fixed; bottom: 28px; right: 28px; z-index: 900; width: 64px; height: 64px; border-radius: 50%; background: var(--turq); color: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 28px rgba(61,204,199,.5); border: none; cursor: pointer; font-size: 28px; transition: transform .25s, box-shadow .25s; animation: pulse-fab 2.5s infinite; }
-.chat-fab:hover { transform: scale(1.1); }
-.chat-fab.hidden { display: none; }
-@keyframes pulse-fab { 0%,100% { box-shadow: 0 6px 28px rgba(61,204,199,.5); } 50% { box-shadow: 0 6px 40px rgba(61,204,199,.7), 0 0 0 10px rgba(61,204,199,.1); } }
-.chat-fab-badge { position: absolute; top: -4px; right: -4px; width: 22px; height: 22px; border-radius: 50%; background: var(--coral); color: white; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; border: 2px solid white; }
+/* WhatsApp flotante */
+.wa-float { position: fixed; bottom: 24px; right: 24px; z-index: 500; width: 60px; height: 60px; border-radius: 50%; background: var(--green); color: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 24px rgba(37,211,102,.45); text-decoration: none; font-size: 28px; transition: transform .25s; animation: pulse-wa 2.5s infinite; }
+.wa-float:hover { transform: scale(1.1); }
+@keyframes pulse-wa { 0%,100% { box-shadow: 0 6px 24px rgba(37,211,102,.45); } 50% { box-shadow: 0 6px 32px rgba(37,211,102,.7), 0 0 0 10px rgba(37,211,102,.1); } }
 
-.chat-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.4); backdrop-filter: blur(4px); z-index: 950; opacity: 0; pointer-events: none; transition: opacity .3s; }
-.chat-overlay.open { opacity: 1; pointer-events: all; }
-
-.chat-window { position: fixed; bottom: 28px; right: 28px; z-index: 960; width: 400px; max-width: calc(100vw - 32px); height: 640px; max-height: calc(100vh - 56px); background: white; border-radius: 24px; box-shadow: 0 24px 80px rgba(0,0,0,.25); display: flex; flex-direction: column; overflow: hidden; opacity: 0; transform: translateY(20px) scale(.96); pointer-events: none; transition: all .3s cubic-bezier(.4,0,.2,1); }
-.chat-window.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: all; }
-
-.chat-header { background: linear-gradient(135deg, var(--turq), var(--turq-dark)); padding: 16px 18px; display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
-.chat-avatar { width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,.2); border: 2px solid rgba(255,255,255,.4); display: flex; align-items: center; justify-content: center; font-size: 21px; flex-shrink: 0; overflow: hidden; }
-.chat-h-info { flex: 1; }
-.chat-h-name { color: white; font-size: 14.5px; font-weight: 600; }
-.chat-h-status { color: rgba(255,255,255,.78); font-size: 12px; display: flex; align-items: center; gap: 5px; margin-top: 2px; }
-.chat-status-dot { width: 7px; height: 7px; border-radius: 50%; background: #8BF0A0; animation: blink 2s infinite; }
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.4} }
-.chat-close { background: rgba(255,255,255,.15); border: none; color: white; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; transition: background .2s; flex-shrink: 0; }
-.chat-close:hover { background: rgba(255,255,255,.3); }
-
-.chat-body { flex: 1; overflow-y: auto; padding: 18px 14px; display: flex; flex-direction: column; gap: 10px; scroll-behavior: smooth; background: var(--wa-bg); }
-.chat-body::-webkit-scrollbar { width: 4px; }
-.chat-body::-webkit-scrollbar-thumb { background: rgba(0,0,0,.12); border-radius: 2px; }
-
-.msg { display: flex; flex-direction: column; max-width: 80%; animation: fadeUp .3s ease; }
-@keyframes fadeUp { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
-.msg.bot { align-self: flex-start; }
-.msg.user { align-self: flex-end; align-items: flex-end; }
-.bubble { padding: 9px 13px; border-radius: 12px; font-size: 14.5px; line-height: 1.6; position: relative; word-wrap: break-word; box-shadow: 0 1px 1px rgba(0,0,0,.08); }
-.msg.bot .bubble { background: var(--bubble-bot); color: var(--dark); border-top-left-radius: 3px; }
-.msg.bot .bubble::before { content: ''; position: absolute; top: 0; left: -7px; width: 0; height: 0; border: 7px solid transparent; border-top-color: var(--bubble-bot); border-right: none; border-bottom: none; }
-.msg.user .bubble { background: #DCF8C6; color: var(--dark); border-top-right-radius: 3px; }
-.msg.user .bubble::before { content: ''; position: absolute; top: 0; right: -7px; width: 0; height: 0; border: 7px solid transparent; border-top-color: #DCF8C6; border-left: none; border-bottom: none; }
-.msg-time { font-size: 10.5px; color: rgba(0,0,0,.35); margin-top: 2px; padding: 0 6px; display: flex; align-items: center; gap: 3px; }
-.msg.user .msg-time::after { content: '✓✓'; color: var(--turq); font-size: 11px; }
-.bubble p { margin: 0; }
-.bubble p + p { margin-top: 9px; }
-
-.typing { display: flex; align-self: flex-start; background: var(--bubble-bot); padding: 12px 16px; border-radius: 12px; border-top-left-radius: 3px; gap: 5px; align-items: center; box-shadow: 0 1px 1px rgba(0,0,0,.08); position: relative; }
-.typing::before { content: ''; position: absolute; top: 0; left: -7px; width: 0; height: 0; border: 7px solid transparent; border-top-color: var(--bubble-bot); border-right: none; border-bottom: none; }
-.typing-dot { width: 8px; height: 8px; border-radius: 50%; background: #B0B0B0; animation: bounce 1.2s infinite; }
-.typing-dot:nth-child(2) { animation-delay: .18s; }
-.typing-dot:nth-child(3) { animation-delay: .36s; }
-@keyframes bounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-6px)} }
-
-.quick-opts { display: flex; flex-wrap: wrap; gap: 7px; align-self: flex-end; justify-content: flex-end; margin-top: 2px; max-width: 90%; }
-.qbtn { padding: 9px 15px; border-radius: 20px; font-size: 13.5px; font-weight: 500; border: none; color: var(--turq-dark); background: white; cursor: pointer; transition: all .2s; font-family: 'DM Sans', sans-serif; white-space: nowrap; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
-.qbtn:hover { background: var(--turq); color: white; transform: translateY(-1px); }
-.img-preview { width: 170px; height: 128px; border-radius: 8px; object-fit: cover; display: block; }
-
-.welcome-card { background: white; border-radius: 14px; padding: 18px; margin-bottom: 6px; text-align: center; box-shadow: 0 1px 2px rgba(0,0,0,.1); align-self: center; max-width: 92%; }
-.welcome-card .wc-emoji { font-size: 38px; margin-bottom: 8px; }
-.welcome-card h3 { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--dark); margin-bottom: 5px; }
-.welcome-card p { font-size: 12.5px; color: var(--mid); line-height: 1.55; font-weight: 300; }
-.cupos-alert { background: #FFF4D6; border-radius: 8px; padding: 8px 14px; font-size: 12px; color: #9A7B1A; align-self: center; box-shadow: 0 1px 2px rgba(0,0,0,.08); max-width: 92%; text-align: center; }
-
-.chat-footer { padding: 10px 12px; flex-shrink: 0; background: #F0F0F0; }
-.input-row { display: flex; gap: 8px; align-items: flex-end; }
-.input-wrap { flex: 1; background: white; border-radius: 22px; display: flex; align-items: center; gap: 8px; padding: 0 14px; box-shadow: 0 1px 2px rgba(0,0,0,.08); }
-.chat-input { flex: 1; border: none; background: transparent; padding: 11px 0; font-family: 'DM Sans', sans-serif; font-size: 14.5px; color: var(--dark); resize: none; outline: none; max-height: 80px; line-height: 1.5; }
-.chat-input::placeholder { color: var(--light); }
-.attach-btn { background: none; border: none; cursor: pointer; font-size: 18px; opacity: .5; transition: opacity .2s; padding: 4px; }
-.attach-btn:hover { opacity: 1; }
-.send-btn { width: 46px; height: 46px; border-radius: 50%; background: var(--green); color: white; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 18px; transition: all .2s; flex-shrink: 0; box-shadow: 0 2px 6px rgba(37,211,102,.35); }
-.send-btn:hover { background: var(--green-dark); transform: scale(1.06); }
-#file-input { display: none; }
-.wa-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--green); color: white; padding: 11px 20px; border-radius: 22px; font-size: 13.5px; font-weight: 600; text-decoration: none; margin-top: 4px; transition: all .2s; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; box-shadow: 0 2px 8px rgba(37,211,102,.3); }
-.wa-cta:hover { background: var(--green-dark); transform: translateY(-2px); }
-
-/* ═══════ RESERVA EN 2 PASOS ═══════ */
-.reserva-section { background: var(--cream-dark); padding: 80px 40px; }
-.reserva-header { text-align: center; margin-bottom: 40px; }
-.reserva-box { max-width: 940px; margin: 0 auto; background: white; border-radius: 28px; box-shadow: 0 12px 60px rgba(0,0,0,.08); padding: 32px; }
-.steps-indicator { display: flex; align-items: center; justify-content: center; gap: 0; margin-bottom: 28px; }
-.step-pill { display: flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 50px; font-size: 13px; font-weight: 600; color: var(--light); background: var(--cream-dark); transition: all .3s; }
-.step-pill.active { background: var(--turq); color: white; }
-.step-pill.done { background: var(--turq-pale); color: var(--turq); }
-.step-n { width: 22px; height: 22px; border-radius: 50%; background: rgba(255,255,255,.3); display: flex; align-items: center; justify-content: center; font-size: 12px; }
-.step-pill:not(.active) .step-n { background: rgba(0,0,0,.08); }
-.step-line { width: 40px; height: 2px; background: var(--cream-dark); margin: 0 6px; }
-.reserva-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-.reserva-col { border-radius: 20px; position: relative; }
-
-/* Calendario */
-.calendario-col { background: var(--cream); padding: 22px; }
-.cal-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
-.cal-month { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 600; color: var(--dark); text-transform: capitalize; }
-.cal-nav { width: 32px; height: 32px; border-radius: 50%; border: none; background: white; color: var(--turq); font-size: 18px; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,.08); transition: all .2s; }
-.cal-nav:hover { background: var(--turq); color: white; }
-.cal-weekdays { display: grid; grid-template-columns: repeat(7,1fr); gap: 4px; margin-bottom: 8px; }
-.cal-weekdays span { text-align: center; font-size: 11px; font-weight: 600; color: var(--light); }
-.cal-days { display: grid; grid-template-columns: repeat(7,1fr); gap: 4px; }
-.cal-day { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-size: 13px; border-radius: 10px; cursor: pointer; transition: all .2s; color: var(--dark); background: white; border: 1.5px solid transparent; }
-.cal-day:hover:not(.busy):not(.empty):not(.past) { border-color: var(--turq); transform: scale(1.08); }
-.cal-day.empty { background: transparent; cursor: default; }
-.cal-day.past { color: #D5CCC4; cursor: default; background: transparent; }
-.cal-day.busy { background: var(--coral-pale); color: var(--coral); cursor: not-allowed; text-decoration: line-through; opacity: .7; }
-.cal-day.selected { background: var(--turq); color: white; font-weight: 600; transform: scale(1.05); box-shadow: 0 4px 14px rgba(61,204,199,.4); }
-.cal-legend { display: flex; justify-content: center; gap: 16px; margin-top: 16px; }
-.leg-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--mid); }
-.leg-dot { width: 10px; height: 10px; border-radius: 50%; }
-.leg-dot.free { background: white; border: 1.5px solid var(--turq); }
-.leg-dot.busy { background: var(--coral-pale); border: 1.5px solid var(--coral); }
-.leg-dot.sel { background: var(--turq); }
-.cal-hint { text-align: center; font-size: 12px; color: var(--light); margin-top: 14px; }
-
-/* Chat mini */
-.chat-col { background: var(--wa-bg); overflow: hidden; min-height: 380px; display: flex; }
-.chat-col.locked .mini-chat { filter: blur(3px); opacity: .5; pointer-events: none; }
-.chat-lock-overlay { position: absolute; inset: 0; z-index: 5; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center; padding: 20px; background: rgba(253,248,243,.6); backdrop-filter: blur(2px); border-radius: 20px; transition: opacity .4s; }
-.chat-col:not(.locked) .chat-lock-overlay { opacity: 0; pointer-events: none; }
-.lock-icon { font-size: 40px; }
-.chat-lock-overlay p { font-size: 14px; color: var(--mid); font-weight: 500; max-width: 200px; }
-.mini-chat { flex: 1; display: flex; flex-direction: column; transition: filter .4s, opacity .4s; }
-.mini-chat-head { background: linear-gradient(135deg, var(--turq), var(--turq-dark)); padding: 12px 16px; display: flex; align-items: center; gap: 10px; }
-.mini-avatar { width: 36px; height: 36px; border-radius: 50%; overflow: hidden; border: 2px solid rgba(255,255,255,.4); flex-shrink: 0; }
-.mini-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scale(1.4); border-radius: 50%; }
-.mini-name { color: white; font-size: 13px; font-weight: 600; }
-.mini-status { color: rgba(255,255,255,.8); font-size: 11px; display: flex; align-items: center; gap: 4px; }
-.mini-dot { width: 6px; height: 6px; border-radius: 50%; background: #8BF0A0; }
-.mini-chat-body { flex: 1; padding: 14px; display: flex; flex-direction: column; gap: 8px; overflow-y: auto; max-height: 240px; }
-.mini-msg { max-width: 85%; padding: 8px 12px; border-radius: 12px; font-size: 13px; line-height: 1.5; }
-.mini-msg.bot { align-self: flex-start; background: white; border-top-left-radius: 3px; box-shadow: 0 1px 1px rgba(0,0,0,.08); }
-.mini-msg.user { align-self: flex-end; background: #DCF8C6; border-top-right-radius: 3px; }
-.mini-chat-foot { padding: 10px; background: #F0F0F0; display: flex; gap: 8px; }
-.mini-chat-foot input { flex: 1; border: none; border-radius: 20px; padding: 10px 14px; font-family: 'DM Sans', sans-serif; font-size: 13px; outline: none; }
-.mini-chat-foot button { width: 40px; height: 40px; border-radius: 50%; background: var(--green); color: white; border: none; cursor: pointer; font-size: 15px; flex-shrink: 0; transition: all .2s; }
-.mini-chat-foot button:disabled { background: #C5C5C5; cursor: not-allowed; }
-.mini-chat-foot button:not(:disabled):hover { background: var(--green-dark); transform: scale(1.05); }
-.selected-date-badge { background: var(--turq-pale); color: var(--turq-dark); padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; align-self: center; margin-bottom: 4px; }
-
-
-  .section { padding: 64px 24px; }
-  nav { padding: 14px 20px; }
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .section { padding: 60px 24px; }
+  nav { padding: 12px 20px; }
   .nav-links { display: none; }
-  .carrusel-slide { min-width: calc(80% - 16px); }
-  .btn-prev { left: -12px; }
-  .btn-next { right: -12px; }
-  .como-grid { grid-template-columns: 1fr; gap: 40px; }
-  .cupos-visual { gap: 12px; padding: 20px 24px; }
-  .cupo-card { width: 80px; height: 96px; }
+  .hero { padding: 60px 24px; }
+  .carrusel-slide { min-width: calc(70% - 10px); }
+  .slide-img { height: 240px; }
+  .btn-prev { left: -8px; }
+  .btn-next { right: -8px; }
+  .como-grid { grid-template-columns: 1fr; gap: 36px; }
+  .intro-section { padding: 56px 24px; }
+  .intro-wrap { grid-template-columns: 1fr; gap: 28px; text-align: center; justify-items: center; }
+  .form-card { padding: 26px; }
+  .form-row { grid-template-columns: 1fr; gap: 0; }
   footer { flex-direction: column; text-align: center; padding: 40px 24px; }
   .footer-links { justify-content: center; }
-  .wa-btn-big { padding: 16px 32px; font-size: 16px; }
-  .chat-window { bottom: 0; right: 0; width: 100%; max-width: 100%; height: 100%; max-height: 100%; border-radius: 0; }
-  .chat-fab { bottom: 20px; right: 20px; }
-  .reserva-grid { grid-template-columns: 1fr; }
-  .reserva-box { padding: 20px; }
-  .steps-indicator { flex-direction: column; gap: 8px; }
-  .step-line { width: 2px; height: 20px; }
-  .chat-col { min-height: 340px; }
 }
 </style>
 </head>
 <body>
 
 <!-- BANNER -->
-<div class="banner">
-  🎉 Solo <strong>3 encargos al mes</strong> — Asegura el tuyo antes de que se agoten
-</div>
+<div class="banner">🎉 Solo <strong>4 encargos al mes</strong> — Asegura el tuyo antes de que se agoten</div>
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo"><span class="logo-dot"></span>Dulcemente <em>Colorido</em></a>
+  <a href="#" class="nav-logo"><span class="logo-dot"></span>Dulcemente<em>Colorido</em></a>
   <ul class="nav-links">
     <li><a href="#galeria">Galería</a></li>
     <li><a href="#proceso">Proceso</a></li>
-    <li><a href="#cupos">Disponibilidad</a></li>
+    <li><a href="#proceso">Disponibilidad</a></li>
   </ul>
-  <button class="nav-cta" onclick="openChat()">¡Quiero mi piñata!</button>
+  <a href="#encargo" class="nav-cta">¡Quiero mi piñata!</a>
 </nav>
 
 <!-- HERO -->
@@ -348,22 +222,31 @@ footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 52px 80
   <div class="hero-bg1"></div>
   <div class="hero-bg2"></div>
   <div class="hero-content">
-    <div class="hero-logo">
-      <img src="fotos/logo.png" alt="Dulcemente Colorido" />
-    </div>
+    <div class="hero-logo"><img src="fotos/logo.png" alt="Dulcemente Colorido"/></div>
     <div class="hero-eyebrow"><span></span>Piñatas artesanales · Ibiza · Bajo encargo<span></span></div>
-    <h1>La piñata más<br><em>bonita</em> que has visto<br><span class="coral">la hacemos para ti.</span></h1>
-    <p class="hero-sub">Piñatas gigantes hechas a mano, diseñadas especialmente para tu celebración. Cada pieza es única — como la persona que la inspira.</p>
-    <button class="hero-cta" onclick="openChat()"><span class="cta-icon">🎊</span>¡Quiero mi Piñata!</button>
-    <p class="hero-sub-cta">o <a onclick="document.getElementById('galeria').scrollIntoView()">mira los trabajos primero</a></p>
-    <div class="hero-cupos">
-      <span class="cupos-label">Cupos este mes</span>
-      <div class="cupos-dots">
-        <div class="cupo-dot taken"></div>
-        <div class="cupo-dot taken"></div>
-        <div class="cupo-dot available"></div>
-      </div>
-      <span class="cupos-text">1 plaza libre ✦</span>
+    <h1>La piñata más<br><em>bonita</em> que has visto<br><span class="coral">hecha a mano para ti.</span></h1>
+    <p class="hero-sub">Piñatas artesanales únicas, pensadas para lucir en tu celebración y guardarlas de recuerdo. Cada pieza es diferente — como la persona que la inspira.</p>
+    <a href="#encargo" class="hero-cta"><span class="cta-icon">🎊</span>¡Quiero mi Piñata!</a>
+    <div class="hero-badges">
+      <div class="hbadge"><span class="hbadge-n">100%</span><span class="hbadge-l">Hecha a mano</span></div>
+      <div class="hbadge"><span class="hbadge-n">✦</span><span class="hbadge-l">Pieza única</span></div>
+      <div class="hbadge"><span class="hbadge-n">Ibiza</span><span class="hbadge-l">Entrega en la isla</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO / SOBRE CAROLINA -->
+<section class="intro-section" id="sobre">
+  <div class="intro-wrap">
+    <div class="intro-foto">
+      <img src="fotos/logo.png" alt="Dulcemente Colorido"/>
+    </div>
+    <div class="intro-texto">
+      <div class="eyebrow">Hola 👋</div>
+      <h2>Soy <em>Carolina</em></h2>
+      <p>Todo empezó cuando nació mi hija y quise que su primer cumpleaños fuera mágico de verdad. No encontré la piñata que soñaba... así que la hice yo misma.</p>
+      <p>Después vinieron las de sus primos, las de las amigas, y las primeras ventas. Hoy hago piñatas a mano desde Ibiza, poniendo en cada una el mismo cariño que puse en aquella primera 🌿</p>
+      <p class="intro-firma">Cada pieza es única, como la celebración que la inspira.</p>
     </div>
   </div>
 </section>
@@ -371,121 +254,131 @@ footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 52px 80
 <!-- CARRUSEL -->
 <section class="section carrusel-section" id="galeria">
   <div class="carrusel-header">
-    <div class="eyebrow">Galería de trabajo</div>
+    <div class="eyebrow eyebrow-center">Galería de trabajo</div>
     <h2>Piezas que enamoran <em>y se conservan</em></h2>
-    <p class="section-sub">Desliza para ver algunos encargos. Piezas tan bonitas que muchos clientes las guardan de recuerdo — como el Goku, el cassette de los 40 o el caballo.</p>
+    <p class="section-sub">Toca una foto para verla en grande. Muchos clientes las guardan de recuerdo.</p>
   </div>
   <div class="carrusel-wrap">
     <button class="carrusel-btn btn-prev" id="prev">‹</button>
     <div class="carrusel-track-outer">
       <div class="carrusel-track" id="track">
-        <div class="carrusel-slide slide-c3"><div class="slide-img" style="background-image:url(fotos/rana.jpg);background-size:cover;background-position:center;"><span class="slide-tag" style="background:var(--coral);color:white;">⭐ La favorita</span></div><div class="slide-body"><h4>Rana René · Diseño estrella</h4><p>Nuestra pieza más querida en redes 🐸 Con su lazo de lunares y sus zapatillas. Si sueñas con un personaje, lo hacemos realidad.</p></div></div>
-        <div class="carrusel-slide slide-c1"><div class="slide-img" style="background-image:url(fotos/cassette.jpg);background-size:cover;background-position:center;"><span class="slide-tag">Adultos · 40 años</span></div><div class="slide-body"><h4>Cinta de cassette · Juan 40</h4><p>Cumpleaños temático años 80. Personalizado con nombre y número. Aún lo conservan.</p></div></div>
-        <div class="carrusel-slide slide-c2"><div class="slide-img" style="background-image:url(fotos/astronauta.jpg);background-size:cover;background-position:center;"><span class="slide-tag">Infantil · 8 años</span></div><div class="slide-body"><h4>Planeta astronauta · Chloe 8</h4><p>Piñata espacial con detalles holográficos y astronauta.</p></div></div>
-        <div class="carrusel-slide slide-c3"><div class="slide-img" style="background-image:url(fotos/mariposa.jpg);background-size:cover;background-position:center;"><span class="slide-tag">Especial · Botánico</span></div><div class="slide-body"><h4>Mariposa con flores de papel</h4><p>Diseño botánico con flores artesanales. Pieza única.</p></div></div>
-        <div class="carrusel-slide slide-c4"><div class="slide-img" style="background-image:url(fotos/goku.jpg);background-size:cover;background-position:center;"><span class="slide-tag">Infantil · Anime</span></div><div class="slide-body"><h4>Goku gigante · Dragon Ball</h4><p>Figura gigante de más de 80cm con muchísimo detalle. De las que se guardan.</p></div></div>
-        <div class="carrusel-slide slide-c5"><div class="slide-img" style="background-image:url(fotos/numero3.jpg);background-size:cover;background-position:center;"><span class="slide-tag">Infantil · Número</span></div><div class="slide-body"><h4>Número 3 · Hada Alma</h4><p>Número gigante con hada y flores. Coral y malva.</p></div></div>
-        <div class="carrusel-slide slide-c6"><div class="slide-img" style="background-image:url(fotos/stitch.jpg);background-size:cover;background-position:center;"><span class="slide-tag">Infantil · Personaje</span></div><div class="slide-body"><h4>Stitch · Edición especial</h4><p>Personaje con flor hawaiana. Azul marino y detalles.</p></div></div>
+        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/rana.jpg','Rana René · Diseño estrella')"><img src="fotos/rana.jpg" alt="Rana René"/><span class="slide-tag fav">⭐ La favorita</span></div><div class="slide-body"><h4>Rana René</h4><p>La más querida en redes 🐸 Si sueñas un personaje, lo hacemos realidad.</p></div></div>
+        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/cassette.jpg','Cinta de cassette · Juan 40')"><img src="fotos/cassette.jpg" alt="Cassette 40"/><span class="slide-tag">Adultos · 40</span></div><div class="slide-body"><h4>Cassette · 40 años</h4><p>Temática años 80, personalizada. Aún la conservan.</p></div></div>
+        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/astronauta.jpg','Planeta astronauta · Chloe 8')"><img src="fotos/astronauta.jpg" alt="Astronauta"/><span class="slide-tag">Infantil</span></div><div class="slide-body"><h4>Astronauta · Chloe 8</h4><p>Piñata espacial con detalles holográficos.</p></div></div>
+        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/mariposa.jpg','Mariposa con flores de papel')"><img src="fotos/mariposa.jpg" alt="Mariposa"/><span class="slide-tag">Botánico</span></div><div class="slide-body"><h4>Mariposa botánica</h4><p>Con flores artesanales de papel. Pieza única.</p></div></div>
+        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/goku.jpg','Goku gigante · Dragon Ball')"><img src="fotos/goku.jpg" alt="Goku"/><span class="slide-tag">Gigante</span></div><div class="slide-body"><h4>Goku gigante</h4><p>Más de 80cm de puro detalle. De las que se guardan.</p></div></div>
+        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/numero3.jpg','Número 3 · Hada Alma')"><img src="fotos/numero3.jpg" alt="Número 3"/><span class="slide-tag">Número</span></div><div class="slide-body"><h4>Número 3 · Hada</h4><p>Número gigante con hada y flores.</p></div></div>
+        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/stitch.jpg','Stitch · Edición especial')"><img src="fotos/stitch.jpg" alt="Stitch"/><span class="slide-tag">Personaje</span></div><div class="slide-body"><h4>Stitch</h4><p>Con flor hawaiana. Azul marino y detalles.</p></div></div>
       </div>
     </div>
     <button class="carrusel-btn btn-next" id="next">›</button>
   </div>
   <div class="carrusel-dots" id="dots"></div>
-  <p class="swipe-hint">👆 Desliza o usa las flechas para ver más</p>
-</section>
-
-<!-- CUPOS -->
-<section class="cupos-section" id="cupos">
-  <div class="eyebrow">Disponibilidad</div>
-  <h2>Solo <em>3 encargos</em> al mes</h2>
-  <p class="section-sub">Para que cada piñata tenga el tiempo, el cariño y la atención que se merece.</p>
-  <div class="cupos-visual">
-    <div class="cupo-card taken"><span class="cupo-ic">🎉</span><span class="cupo-st">Encargado</span></div>
-    <div class="cupo-card taken"><span class="cupo-ic">🎉</span><span class="cupo-st">Encargado</span></div>
-    <div class="cupo-card available"><span class="cupo-ic">✨</span><span class="cupo-st">¡Libre!</span></div>
+  <p class="swipe-hint">👆 Desliza o usa las flechas · Toca para ver en grande</p>
+  <div style="text-align:center; margin-top:28px;">
+    <a href="https://www.tiktok.com/@dulcementecolorido" target="_blank" class="tiktok-cta">
+      <span style="font-size:18px;">🎬</span> Mira cómo se hacen en TikTok · @dulcementecolorido
+    </a>
   </div>
-  <div><span class="cupos-num" id="cupos-counter">1</span><p class="cupos-num-label">plaza disponible este mes</p></div>
-  <div class="cupos-urgencia">⚡ <strong>Mínimo 2 semanas de antelación</strong> — Reserva tu fecha antes de que se agote</div>
-  <br>
-  <button class="hero-cta" onclick="openChat()"><span class="cta-icon">🎊</span>Reservar mi plaza ahora</button>
 </section>
 
-<!-- CÓMO FUNCIONA -->
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightboxImg" src="" alt=""/>
+  <div class="lightbox-cap" id="lightboxCap"></div>
+</div>
+
+<!-- CÓMO FUNCIONA + CUPOS (compacto) -->
 <section class="section como-section" id="proceso">
+  <div class="como-header">
+    <div class="eyebrow eyebrow-center">El proceso</div>
+    <h2>Así nace <em>tu piñata</em></h2>
+    <p class="section-sub">Haz clic en cada paso para descubrir cómo funciona. Es más sencillo de lo que parece.</p>
+  </div>
   <div class="como-grid">
-    <div class="como-texto">
-      <div class="eyebrow">El proceso</div>
-      <h2>Así nace <em>tu piñata</em></h2>
-      <p class="section-sub">Haz clic en cada paso para descubrir cómo trabajamos. Es más sencillo de lo que parece.</p>
-      <p class="como-nota">✦ Cada pieza sale de las manos de Carolina, no de una fábrica.</p>
-    </div>
     <div class="acordeon" id="acordeon">
-      <div class="ac-item active"><div class="ac-header"><div class="ac-num">1</div><span class="ac-title">Eliges tu idea</span><span class="ac-arrow">↓</span></div><div class="ac-body"><p>Nos cuentas qué quieres celebrar — el personaje, los colores, el nombre del protagonista y la fecha. No hace falta tenerlo todo claro, lo construimos juntas.</p><span class="ac-tag">📩 Por el chat o WhatsApp</span></div></div>
-      <div class="ac-item"><div class="ac-header"><div class="ac-num">2</div><span class="ac-title">Carolina la diseña a mano</span><span class="ac-arrow">↓</span></div><div class="ac-body"><p>Con tu idea en mente, crea la piñata desde cero. Papel crepé, goma eva, tijeras y muchas horas de mimo. Te manda fotos del proceso para que veas cómo avanza.</p><span class="ac-tag">⏱ Mínimo 2 semanas de trabajo</span></div></div>
-      <div class="ac-item"><div class="ac-header"><div class="ac-num">3</div><span class="ac-title">¡A lucirla!</span><span class="ac-arrow">↓</span></div><div class="ac-body"><p>La recoges en Sant Jordi o coordinamos la entrega. Es una pieza para lucir y presumir en tu fiesta — y quedártela de recuerdo después. Tú decides si algún día la abres o la conservas para decorar 😍</p><span class="ac-tag">📍 Entrega en toda la isla</span></div></div>
+      <div class="ac-item active"><div class="ac-header"><div class="ac-num">1</div><span class="ac-title">Cuéntanos tu idea</span><span class="ac-arrow">↓</span></div><div class="ac-body"><p>Rellenas el formulario con lo que celebras, la fecha, el personaje o temática y tus colores. Con eso Carolina ya sabe por dónde empezar.</p><span class="ac-tag">📩 Te llega directo a su WhatsApp</span></div></div>
+      <div class="ac-item"><div class="ac-header"><div class="ac-num">2</div><span class="ac-title">Carolina te da el ok</span><span class="ac-arrow">↓</span></div><div class="ac-body"><p>Ella revisa tu idea y la agenda, y en menos de 24h te confirma por WhatsApp si es viable, el precio y la fecha. La reserva cuenta desde ese ok.</p><span class="ac-tag">⏱ Mínimo 2 semanas de antelación</span></div></div>
+      <div class="ac-item"><div class="ac-header"><div class="ac-num">3</div><span class="ac-title">¡A lucirla!</span><span class="ac-arrow">↓</span></div><div class="ac-body"><p>La recoges gratis en Sant Jordi o te la llevamos a domicilio. Es una pieza para presumir en tu fiesta y quedártela de recuerdo 😍</p><span class="ac-tag">📍 Entrega en toda la isla</span></div></div>
+    </div>
+    <div class="cupos-panel">
+      <div class="cupos-panel-head">
+        <span class="cupos-panel-eyebrow">Disponibilidad</span>
+        <h3>Solo <em>4 piñatas</em><br>cada mes</h3>
+        <p>Para dedicarle a cada una el tiempo y el mimo que merece.</p>
+      </div>
+      <div class="cupos-dots-row">
+        <div class="cupo-mini taken">🎉</div>
+        <div class="cupo-mini taken">🎉</div>
+        <div class="cupo-mini taken">🎉</div>
+        <div class="cupo-mini free">✨</div>
+      </div>
+      <p class="cupos-panel-status"><strong>1 plaza libre</strong> este mes</p>
+      <a href="#encargo" class="cupos-panel-btn">Reservar la mía</a>
     </div>
   </div>
+  <p class="como-nota" style="text-align:center;">✦ Cada pieza la hace Carolina a mano, no una fábrica.</p>
 </section>
 
-<!-- RESERVA EN 2 PASOS -->
-<section class="reserva-section" id="contacto">
-  <div class="reserva-header">
-    <div class="eyebrow eyebrow-center">Reserva</div>
-    <h2>Reserva tu fecha en <em>2 pasos</em></h2>
-    <p class="section-sub">Mira los días libres y cuéntale tu idea a mi compi. Así de fácil.</p>
-  </div>
-
-  <div class="reserva-box">
-    <!-- Indicador de pasos -->
-    <div class="steps-indicator">
-      <div class="step-pill active" id="pill1"><span class="step-n">1</span> Consulta disponibilidad</div>
-      <div class="step-line"></div>
-      <div class="step-pill" id="pill2"><span class="step-n">2</span> Habla con mi compi</div>
+<!-- FORMULARIO -->
+<section class="section form-section" id="encargo">
+  <div class="form-wrap">
+    <div class="form-header">
+      <div class="eyebrow eyebrow-center">Pide tu encargo</div>
+      <h2>¿Tienes una fiesta <em>en mente?</em></h2>
+      <p class="section-sub">Rellena esto y al enviar se abre WhatsApp con tu mensaje listo. Carolina te responde en menos de 24h.</p>
     </div>
-
-    <div class="reserva-grid">
-      <!-- PASO 1: CALENDARIO -->
-      <div class="reserva-col calendario-col" id="calCol">
-        <div class="cal-head">
-          <button class="cal-nav" id="calPrev">‹</button>
-          <span class="cal-month" id="calMonth">Mes</span>
-          <button class="cal-nav" id="calNext">›</button>
-        </div>
-        <div class="cal-weekdays">
-          <span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span>
-        </div>
-        <div class="cal-days" id="calDays"></div>
-        <div class="cal-legend">
-          <span class="leg-item"><span class="leg-dot free"></span> Libre</span>
-          <span class="leg-item"><span class="leg-dot busy"></span> Ocupado</span>
-          <span class="leg-item"><span class="leg-dot sel"></span> Tu fecha</span>
-        </div>
-        <p class="cal-hint" id="calHint">👆 Toca un día libre para continuar</p>
+    <div class="form-card">
+      <div class="form-group">
+        <label>Tu nombre <span class="req">*</span></label>
+        <input type="text" id="f_nombre" placeholder="¿Cómo te llamas?"/>
       </div>
-
-      <!-- PASO 2: CHAT -->
-      <div class="reserva-col chat-col locked" id="chatCol">
-        <div class="chat-lock-overlay" id="chatLock">
-          <div class="lock-icon">🗓️</div>
-          <p>Elige primero una fecha libre en el calendario</p>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Tipo de celebración</label>
+          <select id="f_tipo">
+            <option value="">Selecciona...</option>
+            <option>Cumpleaños infantil</option>
+            <option>Cumpleaños adulto (30, 40, 50...)</option>
+            <option>Boda o aniversario</option>
+            <option>Evento corporativo</option>
+            <option>Otra celebración</option>
+          </select>
         </div>
-        <div class="mini-chat">
-          <div class="mini-chat-head">
-            <div class="mini-avatar"><img src="fotos/logo.png" alt="DC"/></div>
-            <div>
-              <div class="mini-name">Tu compi de Dulcemente</div>
-              <div class="mini-status"><span class="mini-dot"></span>En línea</div>
-            </div>
-          </div>
-          <div class="mini-chat-body" id="miniBody">
-            <div class="mini-msg bot">¡Hola! 🎊 Elige una fecha libre y cuéntame qué piñata sueñas para ese día ✨</div>
-          </div>
-          <div class="mini-chat-foot">
-            <input type="text" id="miniInput" placeholder="Elige una fecha primero..." disabled onkeydown="if(event.key==='Enter')miniSend()"/>
-            <button id="miniSendBtn" onclick="miniSend()" disabled>➤</button>
-          </div>
+        <div class="form-group">
+          <label>Fecha del evento</label>
+          <input type="text" id="f_fecha" placeholder="Ej: 15 de agosto"/>
         </div>
       </div>
+      <div class="form-group">
+        <label>Temática o personaje</label>
+        <input type="text" id="f_tema" placeholder="Ej: Rana René, número 40, unicornio..."/>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Colores que te gustan</label>
+          <input type="text" id="f_colores" placeholder="Ej: pastel, verde y dorado..."/>
+        </div>
+        <div class="form-group">
+          <label>Zona de entrega</label>
+          <select id="f_zona">
+            <option value="">Selecciona...</option>
+            <option>Recojo en Sant Jordi (gratis)</option>
+            <option>Domicilio en Ibiza (5€)</option>
+            <option>Envío a península (coste según tamaño y destino)</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>¿Algo más que quieras contarle a Carolina?</label>
+        <textarea id="f_mas" placeholder="Tamaño, nombre del protagonista, cualquier detalle..."></textarea>
+      </div>
+      <button class="wa-submit" onclick="enviarWhatsApp()">
+        <span style="font-size:22px;">💬</span> Enviar mi encargo por WhatsApp
+      </button>
+      <p class="form-alt">¿Prefieres email? <a href="mailto:carolina.foti@gmail.com?subject=Encargo%20de%20pi%C3%B1ata">Escríbele aquí</a></p>
+      <p class="form-nota">Trabajo exclusivamente bajo encargo · Plazas limitadas cada mes · Mínimo 2 semanas de antelación<br>En Ibiza: recogida gratis en Sant Jordi o domicilio por 5€ · Envíos a península con coste según el tamaño de la pieza y el destino</p>
     </div>
   </div>
 </section>
@@ -493,47 +386,20 @@ footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 52px 80
 <!-- FOOTER -->
 <footer>
   <div class="footer-left">
-    <div class="brand">Dulcemente <em>Colorido</em></div>
+    <div class="brand">Dulcemente<em>Colorido</em></div>
     <p>© 2025 · Piñatas artesanales · Ibiza · by Carolina ♡</p>
   </div>
   <div class="footer-links">
     <a onclick="document.getElementById('galeria').scrollIntoView()">Galería</a>
     <a onclick="document.getElementById('proceso').scrollIntoView()">Proceso</a>
-    <a onclick="document.getElementById('cupos').scrollIntoView()">Disponibilidad</a>
-    <a onclick="openChat()">Contacto</a>
+    <a onclick="document.getElementById('encargo').scrollIntoView()">Pedir encargo</a>
+    <a href="https://www.tiktok.com/@dulcementecolorido" target="_blank">TikTok</a>
   </div>
   <span class="footer-badge">Hecho a mano con amor ♡</span>
 </footer>
 
-<!-- ═══════ CHAT FLOTANTE ═══════ -->
-<button class="chat-fab" id="chatFab" onclick="openChat()">
-  💬
-  <span class="chat-fab-badge">1</span>
-</button>
-
-<div class="chat-overlay" id="chatOverlay" onclick="closeChat()"></div>
-
-<div class="chat-window" id="chatWindow">
-  <div class="chat-header">
-    <div class="chat-avatar"><img src="fotos/logo.png" alt="DC" style="width:100%;height:100%;object-fit:cover;object-position:center;transform:scale(1.4);border-radius:50%;"/></div>
-    <div class="chat-h-info">
-      <div class="chat-h-name">Asistente · Dulcemente Colorido</div>
-      <div class="chat-h-status"><span class="chat-status-dot"></span>En línea · Ibiza 🌴</div>
-    </div>
-    <button class="chat-close" onclick="closeChat()">✕</button>
-  </div>
-  <div class="chat-body" id="chatBody"></div>
-  <div class="chat-footer">
-    <div class="input-row">
-      <div class="input-wrap">
-        <textarea class="chat-input" id="userInput" rows="1" placeholder="Escribe un mensaje..." onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
-        <button class="attach-btn" onclick="document.getElementById('file-input').click()">📎</button>
-      </div>
-      <button class="send-btn" onclick="sendMessage()">➤</button>
-    </div>
-    <input type="file" id="file-input" accept="image/*" onchange="handleFileUpload(event)"/>
-  </div>
-</div>
+<!-- WhatsApp flotante -->
+<a class="wa-float" href="https://wa.me/34664363475?text=Hola%20Carolina!%20Me%20interesa%20encargar%20una%20pi%C3%B1ata%20🎉" target="_blank">💬</a>
 
 <script>
 // ═══════ CARRUSEL ═══════
@@ -541,19 +407,21 @@ const track = document.getElementById('track');
 const slides = track.querySelectorAll('.carrusel-slide');
 const dotsContainer = document.getElementById('dots');
 let current = 0;
-let slidesVisible = window.innerWidth < 900 ? 1 : 3;
-let maxIndex = slides.length - slidesVisible;
-slides.forEach((_, i) => {
-  if (i <= maxIndex) {
+let slidesVisible = window.innerWidth < 900 ? 1 : 4;
+let maxIndex = Math.max(0, slides.length - slidesVisible);
+
+function buildDots() {
+  dotsContainer.innerHTML = '';
+  for (let i = 0; i <= maxIndex; i++) {
     const dot = document.createElement('button');
-    dot.className = 'c-dot' + (i === 0 ? ' active' : '');
+    dot.className = 'c-dot' + (i === current ? ' active' : '');
     dot.addEventListener('click', () => goTo(i));
     dotsContainer.appendChild(dot);
   }
-});
+}
 function goTo(index) {
   current = Math.max(0, Math.min(index, maxIndex));
-  const slideW = slides[0].offsetWidth + 24;
+  const slideW = slides[0].offsetWidth + 20;
   track.style.transform = `translateX(-${current * slideW}px)`;
   dotsContainer.querySelectorAll('.c-dot').forEach((d, i) => d.classList.toggle('active', i === current));
 }
@@ -562,10 +430,19 @@ document.getElementById('next').addEventListener('click', () => goTo(current + 1
 let touchStartX = 0;
 track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
 track.addEventListener('touchend', e => { const diff = touchStartX - e.changedTouches[0].clientX; if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1); });
-let autoSlide = setInterval(() => goTo(current < maxIndex ? current + 1 : 0), 4000);
+let autoSlide = setInterval(() => goTo(current < maxIndex ? current + 1 : 0), 4500);
 track.addEventListener('mouseenter', () => clearInterval(autoSlide));
-track.addEventListener('mouseleave', () => { autoSlide = setInterval(() => goTo(current < maxIndex ? current + 1 : 0), 4000); });
-window.addEventListener('resize', () => { slidesVisible = window.innerWidth < 900 ? 1 : 3; maxIndex = slides.length - slidesVisible; goTo(0); });
+track.addEventListener('mouseleave', () => { autoSlide = setInterval(() => goTo(current < maxIndex ? current + 1 : 0), 4500); });
+window.addEventListener('resize', () => { slidesVisible = window.innerWidth < 900 ? 1 : 4; maxIndex = Math.max(0, slides.length - slidesVisible); current = Math.min(current, maxIndex); buildDots(); goTo(current); });
+buildDots();
+
+// ═══════ LIGHTBOX ═══════
+function openLightbox(src, cap) {
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightboxCap').textContent = cap;
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); }
 
 // ═══════ ACORDEÓN ═══════
 document.querySelectorAll('.ac-item').forEach(item => {
@@ -576,434 +453,32 @@ document.querySelectorAll('.ac-item').forEach(item => {
   });
 });
 
-// ═══════ CONTADOR ═══════
-const counter = document.getElementById('cupos-counter');
-const obs = new IntersectionObserver(entries => {
-  if (entries[0].isIntersecting) {
-    let n = 0;
-    const step = setInterval(() => { n++; counter.textContent = n; if (n >= 1) clearInterval(step); }, 300);
-    obs.disconnect();
-  }
-}, { threshold: .5 });
-obs.observe(counter);
+// ═══════ FORMULARIO → WHATSAPP ═══════
+function enviarWhatsApp() {
+  const nombre = document.getElementById('f_nombre').value.trim();
+  if (!nombre) { alert('¡Escribe tu nombre para empezar! 😊'); document.getElementById('f_nombre').focus(); return; }
+  const tipo = document.getElementById('f_tipo').value;
+  const fecha = document.getElementById('f_fecha').value.trim();
+  const tema = document.getElementById('f_tema').value.trim();
+  const colores = document.getElementById('f_colores').value.trim();
+  const zona = document.getElementById('f_zona').value;
+  const mas = document.getElementById('f_mas').value.trim();
 
-// ═══════════════════════════════════════
-//   CHAT — AGENTE DE IA
-// ═══════════════════════════════════════
-const CAROLINA_SYSTEM = `
-Eres el asistente virtual de "Dulcemente Colorido", la marca de piñatas artesanales y personalizadas de Carolina en Ibiza. Eres su compi virtual, NO eres Carolina. Atiendes a los clientes por chat como su mano derecha de confianza.
+  let msg = `¡Hola Carolina! 🎉 Soy ${nombre} y me gustaría encargar una piñata.\n\n`;
+  if (tipo) msg += `🎂 Celebración: ${tipo}\n`;
+  if (fecha) msg += `📅 Fecha: ${fecha}\n`;
+  if (tema) msg += `🎨 Temática: ${tema}\n`;
+  if (colores) msg += `🌈 Colores: ${colores}\n`;
+  if (zona) msg += `📍 Entrega: ${zona}\n`;
+  if (mas) msg += `\n📝 Más detalles: ${mas}\n`;
+  msg += `\n¿Me dices si es viable? ¡Gracias! 🌿`;
 
-IDENTIDAD (MUY IMPORTANTE): NUNCA digas "soy Carolina" ni te hagas pasar por ella. Tú eres su asistente virtual. Cuando hables de Carolina, lo haces SIEMPRE en tercera persona: "le paso los detalles a Carolina", "déjame que lo mire con Carolina para que ella te dé el ok", "Carolina revisará la agenda y el diseño". Tú recopilas la info y haces de puente cálido entre el cliente y Carolina.
-
-TONO: Alegre, detallista, creativo, cercano y profesional. Hablas SIEMPRE de "tú" de España (vives, cuéntame, tienes, déjame). PROHIBIDO el voseo. Integras de forma orgánica estas expresiones de la marca cuando encajen: "¡Ohhh, qué guapo!", "¡Qué bonito!", "Cuéntame qué tienes en mente, fecha y demás detalles y te digo cosillas para ver si es viable.", "Es un locurón de grande.", "Déjame que lo mire con Carolina para darte el ok / el visto bueno."
-
-FORMATO VISUAL (CRUCIAL): Escribes SIEMPRE en texto plano y fluido, como un WhatsApp real. Párrafos cortos separados por saltos de línea, con emoticonos naturales. PROHIBIDO usar listas con guiones o asteriscos, viñetas, bloques de código, tablas o negritas. Si enumeras algo (precios, entregas), lo cuentas hablado dentro de la frase, nunca en lista. Máximo unas 100 palabras por mensaje. Mejor varios mensajes cortos.
-
-NEGOCIO: Foco absoluto en piñatas personalizadas bajo encargo en Ibiza. Si preguntan por toppers u otras cosas, con cariño dices que ahora mismo Carolina solo hace piñatas, ¡pero que son las mejores de la isla! Solo se aceptan 3 encargos al mes; si se acercan los cupos, transmites urgencia con cariño. Mínimo 2 semanas de antelación siempre.
-
-DATOS A RECOPILAR de forma cercana (no interrogatorio): fecha del evento, tipo de evento, temática o foto de ejemplo, y zona (Ibiza o península) para la entrega.
-
-PRECIO Y VALOR: El precio de salida de las piñatas artesanales es a partir de 60€ (tamaño estándar de 40-50 cm de alto). 60€ es el mínimo desde el que arrancamos, y el precio sube según la complejidad y el tamaño del diseño personalizado que pida el cliente. Lo explicas con orgullo: no es una piñata común de bazar de esas que se rompen en dos golpes; las de Carolina se montan con estructuras firmes y muchísimo mimo, quedan guapísimas y muchos clientes las guardan de recuerdo para decorar. Si te mandan foto de una piñata enorme o muy compleja (tipo baby shower con estructura reforzada), explicas con cariño que ese volumen y esas horas se van a los 120€ o más. Defiendes los precios con orgullo y cariño, sin disculparte.
-
-POSICIONAMIENTO (MUY IMPORTANTE): Las piñatas de Carolina son piezas DECORATIVAS para lucir, no para destruir. No se entregan con palo ni con nada para romperlas, y no vienen pensadas para hacerse pedazos. Son verdaderas obras de arte hechas a mano que la gente presume en su fiesta y luego CONSERVA de recuerdo (por ejemplo el Goku, el cassette de los 40, el caballo o el Demogorgon, que aún los guardan sus dueños). Si el cliente luego quiere abrirla o romperla en casa es cosa suya, pero tú NUNCA hablas de "romperla", "rellenarla" ni de "pegarle". Vendes una pieza única para lucir, disfrutar y guardar. Habla siempre desde ese valor decorativo y de recuerdo.
-
-ENTREGAS: En Ibiza se pueden recoger gratis en Sant Jordi, o se entregan a domicilio por 5€. A península se hacen envíos con el coste aparte. Lo cuentas hablado, nunca en lista.
-
-FILTRO DE VIABILIDAD (LAS 24H): TÚ NO confirmas la reserva de golpe nunca. Cuando ya tienes los datos (fecha, evento, temática/foto, zona), le dices al cliente que le pasas todos los detalles a Carolina para que ella revise el diseño en persona (¡para asegurarse de que no sea una locura imposible!) y mire bien la agenda. En máximo 24 horas Carolina dará el ok o visto bueno definitivo por WhatsApp, y la reserva cuenta desde ese mensaje de confirmación, no antes. Si el diseño parece imposible o desafía la gravedad, lo dices con humor y cariño y que justo por eso necesitas que Carolina lo mire. Al final, cuando tienes todo, ofreces continuar por WhatsApp para que Carolina cierre el ok.
-`;
-
-let conversationHistory = [];
-let isTyping = false;
-let uploadedImageBase64 = null;
-let uploadedImagePreview = null;
-let chatStarted = false;
-const chatBody = document.getElementById('chatBody');
-const userInput = document.getElementById('userInput');
-
-function openChat() {
-  document.getElementById('chatWindow').classList.add('open');
-  document.getElementById('chatOverlay').classList.add('open');
-  document.getElementById('chatFab').classList.add('hidden');
-  if (!chatStarted) { chatStarted = true; initChat(); }
-}
-function closeChat() {
-  document.getElementById('chatWindow').classList.remove('open');
-  document.getElementById('chatOverlay').classList.remove('open');
-  document.getElementById('chatFab').classList.remove('hidden');
+  const url = `https://wa.me/34664363475?text=${encodeURIComponent(msg)}`;
+  window.open(url, '_blank');
 }
 
-function getTime() { return new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' }); }
-function scrollBottom() { setTimeout(() => { chatBody.scrollTop = chatBody.scrollHeight; }, 50); }
-function autoResize(el) { el.style.height = 'auto'; el.style.height = Math.min(el.scrollHeight, 80) + 'px'; }
-function formatMessage(text) {
-  const paragraphs = text.split(/\n\n+/).filter(p => p.trim());
-  if (paragraphs.length > 1) return paragraphs.map(p => `<p>${p.replace(/\n/g, '<br/>')}</p>`).join('');
-  return text.replace(/\n/g, '<br/>');
-}
-function addMessage(role, content, opts = {}) {
-  const msg = document.createElement('div');
-  msg.className = `msg ${role}`;
-  const bubble = document.createElement('div');
-  bubble.className = 'bubble';
-  if (opts.isImage) {
-    const img = document.createElement('img');
-    img.src = content; img.className = 'img-preview';
-    bubble.appendChild(img);
-    if (opts.caption) { const cap = document.createElement('p'); cap.style.cssText = 'font-size:13px;margin-top:6px;'; cap.textContent = opts.caption; bubble.appendChild(cap); }
-  } else { bubble.innerHTML = formatMessage(content); }
-  const time = document.createElement('div');
-  time.className = 'msg-time';
-  time.innerHTML = `<span>${getTime()}</span>`;
-  msg.appendChild(bubble); msg.appendChild(time);
-  chatBody.appendChild(msg); scrollBottom();
-  return msg;
-}
-function addQuickOptions(options, onSelect) {
-  const wrap = document.createElement('div');
-  wrap.className = 'quick-opts';
-  options.forEach(opt => {
-    const btn = document.createElement('button');
-    btn.className = 'qbtn'; btn.textContent = opt;
-    btn.onclick = () => { wrap.remove(); onSelect(opt); };
-    wrap.appendChild(btn);
-  });
-  chatBody.appendChild(wrap); scrollBottom();
-}
-function showTyping() {
-  const t = document.createElement('div');
-  t.className = 'typing'; t.id = 'typing-indicator';
-  t.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
-  chatBody.appendChild(t); scrollBottom();
-}
-function hideTyping() { const t = document.getElementById('typing-indicator'); if (t) t.remove(); }
-function addWaCta() {
-  const msg = document.createElement('div');
-  msg.className = 'msg bot';
-  msg.innerHTML = `<div style="display:flex;flex-direction:column;align-items:flex-start;gap:6px;"><a class="wa-cta" href="https://wa.me/34TUNUMERO?text=Hola%20Carolina!%20Vengo%20del%20chat%20web%20y%20quiero%20encargar%20una%20piñata%20🎉" target="_blank">💬 Seguir por WhatsApp con Carolina</a></div><div class="msg-time"><span>${getTime()}</span></div>`;
-  chatBody.appendChild(msg); scrollBottom();
-}
-
-async function callClaude(userText, imageBase64 = null) {
-  isTyping = true;
-  showTyping();
-
-  // ═══ MODO PRUEBA: respuestas simuladas sin conexión ═══
-  if (MODO_PRUEBA) {
-    conversationHistory.push({ role: "user", content: userText });
-    await new Promise(r => setTimeout(r, 1400)); // simula que está escribiendo
-    hideTyping();
-    const reply = respuestaSimulada(userText);
-    conversationHistory.push({ role: "assistant", content: reply });
-    addMessage('bot', reply);
-    const triggers = ['visto bueno', 'ok definitivo', 'le paso', '24 horas', '24h', 'darte el ok'];
-    if (triggers.some(t => reply.toLowerCase().includes(t))) setTimeout(addWaCta, 700);
-    isTyping = false; uploadedImageBase64 = null; uploadedImagePreview = null;
-    return;
-  }
-
-  // ═══ MODO REAL: llama a la IA de verdad ═══
-  let userContent;
-  if (imageBase64) {
-    userContent = [
-      { type: "image", source: { type: "base64", media_type: "image/jpeg", data: imageBase64 } },
-      { type: "text", text: userText || "Te mando una foto de referencia de la piñata que me gustaría, ¿qué me dices?" }
-    ];
-  } else { userContent = userText; }
-  conversationHistory.push({ role: "user", content: userContent });
-  const minWait = new Promise(r => setTimeout(r, 1100));
-  const apiCall = fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ model: "claude-sonnet-4-6", max_tokens: 1000, system: CAROLINA_SYSTEM, messages: conversationHistory })
-  }).then(r => r.json());
-  const [data] = await Promise.all([apiCall, minWait]);
-  hideTyping();
-  const reply = (data.content && data.content[0] && data.content[0].text) ? data.content[0].text : "¡Ay, perdona! Se me ha cruzado el internet de la isla un segundo 🙈 ¿Me lo repites?";
-  conversationHistory.push({ role: "assistant", content: reply });
-  addMessage('bot', reply);
-  const triggers = ['visto bueno', 'ok definitivo', 'le paso', 'en 24 horas', '24h', 'mirar la agenda', 'revise el diseño', 'darte el ok', 'lo mire con carolina'];
-  if (triggers.some(t => reply.toLowerCase().includes(t))) setTimeout(addWaCta, 700);
-  isTyping = false; uploadedImageBase64 = null; uploadedImagePreview = null;
-}
-
-// ═══ CEREBRO DE LA SIMULACIÓN (respuestas de prueba del compi) ═══
-let pasoSimulacion = 0;
-function respuestaSimulada(texto) {
-  const t = (texto || '').toLowerCase();
-  pasoSimulacion++;
-
-  // Si es el primer mensaje y menciona una fecha (viene del calendario)
-  if (pasoSimulacion === 1 && (t.includes('reservar el día') || t.includes('interesa una piñata para') || t.includes('me interesa reservar'))) {
-    return '¡Perfecto! 🎉 Ese día parece libre.\n\nCuéntame, ¿qué temática te gustaría para la piñata? Puede ser un personaje, un número, un animalito... ¡lo que sueñes! Y si tienes una foto de ejemplo, mándamela sin problema 😊';
-  }
-
-  // Detectar temática / personaje
-  if (pasoSimulacion <= 3 && (t.includes('rana') || t.includes('goku') || t.includes('unicornio') || t.includes('mariposa') || t.includes('personaje') || t.includes('número') || t.includes('numero') || t.includes('quiero') || t.includes('gustaría') || t.includes('gustaria') || t.length > 12)) {
-    return '¡Ohhh, qué guapo! 😍 Me encanta la idea.\n\n¿Para qué tamaño la imaginas? Ten en cuenta que las piñatas artesanales arrancan a partir de 60€ (tamaño estándar de 40-50 cm), y si la quieres más grande o con mucho detalle sube según el trabajo.\n\n¿Y en qué zona estás? Así vamos viendo lo de la entrega 🌿';
-  }
-
-  // Detectar zona / entrega
-  if (t.includes('ibiza') || t.includes('sant jordi') || t.includes('península') || t.includes('peninsula') || t.includes('zona') || t.includes('entrega') || t.includes('recoger')) {
-    return '¡Genial! 🙌 En Ibiza puedes recogerla gratis en Sant Jordi, o te la llevo a domicilio por 5€. Si fuera para la península también hago envíos, con el coste aparte.\n\nCreo que ya tengo todo lo importante para empezar 🎨';
-  }
-
-  // Cierre por defecto → filtro 24h + WhatsApp
-  return '¡Muchas gracias por todos los detalles! 🥹\n\nAhora déjame que lo mire con Carolina para darte el ok: ella revisa el diseño y la agenda, y en menos de 24 horas te confirma la reserva por WhatsApp. La fecha queda apartada en cuanto ella te dé el visto bueno 😊\n\n¿Seguimos por WhatsApp para que no se pierda nada?';
-}
-async function sendMessage() {
-  const text = userInput.value.trim();
-  if ((!text && !uploadedImageBase64) || isTyping) return;
-  if (uploadedImagePreview) addMessage('user', uploadedImagePreview, { isImage: true, caption: text || 'Foto de referencia 📸' });
-  else addMessage('user', text);
-  userInput.value = ''; userInput.style.height = 'auto';
-  userInput.placeholder = 'Escribe un mensaje...'; userInput.style.background = '';
-  await callClaude(text, uploadedImageBase64);
-}
-function handleKey(e) { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); } }
-function handleFileUpload(e) {
-  const file = e.target.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = (ev) => {
-    const dataUrl = ev.target.result;
-    uploadedImagePreview = dataUrl;
-    uploadedImageBase64 = dataUrl.split(',')[1];
-    userInput.placeholder = '📎 Foto lista · pulsa enviar ➤';
-    userInput.style.background = 'rgba(61,204,199,.06)';
-  };
-  reader.readAsDataURL(file);
-  e.target.value = '';
-}
-// ═══════════════════════════════════════
-//   CALENDARIO + MINI CHAT (2 PASOS)
-// ═══════════════════════════════════════
-
-/* ╔══════════════════════════════════════════════════════════╗
-   ║                                                          ║
-   ║   👇 CAROLINA — AQUÍ MARCAS TUS DÍAS OCUPADOS 👇          ║
-   ║                                                          ║
-   ║   Escribe cada fecha entre comillas, con este formato:   ║
-   ║   'AÑO-MES-DÍA'   →   ejemplo: '2026-07-10'              ║
-   ║                                                          ║
-   ║   • Para CERRAR un día (cupo lleno o vacaciones):        ║
-   ║     añade la fecha a la lista, separada por una coma.    ║
-   ║                                                          ║
-   ║   • Para VOLVER A ABRIR un día:                          ║
-   ║     borra esa fecha de la lista.                         ║
-   ║                                                          ║
-   ║   Los días de esta lista saldrán en ROJO y tachados.     ║
-   ║   ¡Es lo único que tienes que tocar del código! 😊       ║
-   ║                                                          ║
-   ╚══════════════════════════════════════════════════════════╝ */
-
-const fechasOcupadas = [
-  '2026-07-12',
-  '2026-07-19',
-  '2026-07-26',
-  '2026-08-09',
-  '2026-08-16'
-];
-
-/* ⬆️ FIN DE LA LISTA DE DÍAS OCUPADOS — no toques nada más abajo ⬆️ */
-
-
-/* ╔══════════════════════════════════════════════════════════╗
-   ║   🧪 MODO PRUEBA (para probar la web en tu ordenador)     ║
-   ║                                                          ║
-   ║   true  = el compi responde solo, con textos de prueba   ║
-   ║           (ideal para probar en local sin conexión)      ║
-   ║                                                          ║
-   ║   false = el compi usa la IA real de verdad              ║
-   ║           (déjalo así cuando publiques la web online)    ║
-   ╚══════════════════════════════════════════════════════════╝ */
-
-const MODO_PRUEBA = true;
-
-
-const meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
-let calDate = new Date();
-calDate.setDate(1);
-let fechaElegida = null;
-
-function pad(n){ return n < 10 ? '0'+n : ''+n; }
-
-function renderCalendar() {
-  const y = calDate.getFullYear();
-  const m = calDate.getMonth();
-  document.getElementById('calMonth').textContent = `${meses[m]} ${y}`;
-  const firstDay = (new Date(y, m, 1).getDay() + 6) % 7;
-  const daysInMonth = new Date(y, m+1, 0).getDate();
-  const today = new Date(); today.setHours(0,0,0,0);
-  const cont = document.getElementById('calDays');
-  cont.innerHTML = '';
-  for (let i=0; i<firstDay; i++) {
-    const e = document.createElement('div'); e.className = 'cal-day empty'; cont.appendChild(e);
-  }
-  for (let d=1; d<=daysInMonth; d++) {
-    const cell = document.createElement('div');
-    cell.className = 'cal-day';
-    cell.textContent = d;
-    const dateStr = `${y}-${pad(m+1)}-${pad(d)}`;
-    const thisDate = new Date(y, m, d);
-    if (thisDate < today) {
-      cell.classList.add('past');
-    } else if (fechasOcupadas.includes(dateStr)) {
-      cell.classList.add('busy');
-      cell.title = 'Ocupado';
-    } else {
-      cell.addEventListener('click', () => selectDate(dateStr, d, m, y, cell));
-    }
-    if (fechaElegida === dateStr) cell.classList.add('selected');
-    cont.appendChild(cell);
-  }
-}
-
-function selectDate(dateStr, d, m, y, cell) {
-  fechaElegida = dateStr;
-  document.querySelectorAll('.cal-day').forEach(c => c.classList.remove('selected'));
-  cell.classList.add('selected');
-  const fechaBonita = `${d} de ${meses[m].toLowerCase()}`;
-  document.getElementById('calHint').innerHTML = `✅ Has elegido el <strong>${fechaBonita}</strong>`;
-
-  // Avanzar indicador al paso 2
-  document.getElementById('pill1').classList.remove('active');
-  document.getElementById('pill1').classList.add('done');
-  document.getElementById('pill2').classList.add('active');
-
-  // Desbloquear el chat
-  const chatCol = document.getElementById('chatCol');
-  chatCol.classList.remove('locked');
-  const input = document.getElementById('miniInput');
-  const btn = document.getElementById('miniSendBtn');
-  input.disabled = false; btn.disabled = false;
-  input.placeholder = 'Cuéntame tu idea para ese día...';
-
-  const body = document.getElementById('miniBody');
-
-  // Guardar la fecha elegida para usarla luego
-  window.fechaElegidaBonita = fechaBonita;
-
-  // Mensaje automático del USUARIO con la fecha (como pediste)
-  const badge = document.getElementById('dateBadge');
-  if (!badge) {
-    const um = document.createElement('div');
-    um.className = 'mini-msg user';
-    um.id = 'dateBadge';
-    um.textContent = `Me interesa reservar el día ${fechaBonita} 🗓️`;
-    body.appendChild(um);
-
-    // El compi responde solo, con el indicador de escribiendo
-    const typing = document.createElement('div');
-    typing.className = 'mini-msg bot';
-    typing.id = 'miniTyping';
-    typing.innerHTML = '<span style="opacity:.5">escribiendo...</span>';
-    body.appendChild(typing);
-    body.scrollTop = body.scrollHeight;
-
-    setTimeout(() => {
-      const tp = document.getElementById('miniTyping');
-      if (tp) tp.remove();
-      const bm = document.createElement('div');
-      bm.className = 'mini-msg bot';
-      bm.textContent = `¡Perfecto! El ${fechaBonita} está libre 🎉 Cuéntame qué temática te gustaría para la piñata... ¡lo que sueñes! ✨`;
-      body.appendChild(bm);
-      body.scrollTop = body.scrollHeight;
-    }, 1300);
-  } else {
-    // Si ya había una fecha elegida, actualizarla
-    badge.textContent = `Me interesa reservar el día ${fechaBonita} 🗓️`;
-  }
-  body.scrollTop = body.scrollHeight;
-  input.focus();
-}
-
-document.getElementById('calPrev').addEventListener('click', () => { calDate.setMonth(calDate.getMonth()-1); renderCalendar(); });
-document.getElementById('calNext').addEventListener('click', () => { calDate.setMonth(calDate.getMonth()+1); renderCalendar(); });
-renderCalendar();
-
-let pasoMiniChat = 0;
-function miniSend() {
-  const input = document.getElementById('miniInput');
-  const text = input.value.trim();
-  if (!text) return;
-  const body = document.getElementById('miniBody');
-
-  // Mensaje del usuario
-  const um = document.createElement('div');
-  um.className = 'mini-msg user';
-  um.textContent = text;
-  body.appendChild(um);
-  input.value = '';
-  body.scrollTop = body.scrollHeight;
-  pasoMiniChat++;
-
-  // Indicador "escribiendo..."
-  const typing = document.createElement('div');
-  typing.className = 'mini-msg bot';
-  typing.id = 'miniTyping2';
-  typing.innerHTML = '<span style="opacity:.5">escribiendo...</span>';
-  body.appendChild(typing);
-  body.scrollTop = body.scrollHeight;
-
-  setTimeout(() => {
-    const tp = document.getElementById('miniTyping2');
-    if (tp) tp.remove();
-
-    const bm = document.createElement('div');
-    bm.className = 'mini-msg bot';
-    const fechaBonita = window.fechaElegidaBonita || 'ese día';
-
-    // Respuestas simuladas escalonadas
-    if (pasoMiniChat === 1) {
-      bm.textContent = '¡Ohhh, qué guapo! 😍 Me encanta la idea. ¿Para qué tamaño la imaginas? Las piñatas arrancan a partir de 60€ (tamaño estándar de 40-50 cm), y si la quieres más grande sube según el detalle. ¿En qué zona estás para ver la entrega? 🌿';
-      body.appendChild(bm);
-    } else if (pasoMiniChat === 2) {
-      bm.textContent = '¡Genial! 🙌 En Ibiza puedes recogerla gratis en Sant Jordi o te la llevo a domicilio por 5€. Creo que ya tengo todo lo importante 🎨';
-      body.appendChild(bm);
-    } else {
-      bm.innerHTML = `¡Gracias por los detalles! 🥹 Déjame que lo mire con Carolina: ella revisa el diseño y la agenda y en menos de 24h te da el ok por WhatsApp para el ${fechaBonita} 😊`;
-      body.appendChild(bm);
-      // Botón para pasar a WhatsApp / chat completo
-      setTimeout(() => {
-        const waWrap = document.createElement('div');
-        waWrap.style.cssText = 'align-self:flex-start;margin-top:2px;';
-        waWrap.innerHTML = `<a href="https://wa.me/34TUNUMERO?text=Hola%20Carolina!%20Quiero%20reservar%20el%20${encodeURIComponent(fechaBonita)}%20para%20una%20pi%C3%B1ata%20🎉" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#25D366;color:white;padding:9px 16px;border-radius:20px;font-size:12px;font-weight:600;text-decoration:none;">💬 Confirmar por WhatsApp</a>`;
-        body.appendChild(waWrap);
-        body.scrollTop = body.scrollHeight;
-      }, 600);
-    }
-    body.scrollTop = body.scrollHeight;
-  }, 1300);
-}
-
-function initChat() {
-  const welcome = document.createElement('div');
-  welcome.className = 'welcome-card';
-  welcome.innerHTML = `<div class="wc-emoji">🎉</div><h3>¡Hola! Soy tu compi de Dulcemente Colorido</h3><p>Piñatas artesanales y personalizadas en Ibiza 🌴 Cuéntame qué celebras y se lo preparo todo a Carolina ✨</p>`;
-  chatBody.appendChild(welcome);
-  const cuposAlert = document.createElement('div');
-  cuposAlert.className = 'cupos-alert';
-  cuposAlert.innerHTML = '🗓️ Solo queda <strong>1 cupo libre este mes</strong> · ¡Date prisa!';
-  chatBody.appendChild(cuposAlert);
-  setTimeout(() => {
-    addMessage('bot', '¡Hola! 🎊 ¡Qué ilusión que te quieras llevar una piñata de Dulcemente Colorido!\n\n¿Qué vas a celebrar? Cuéntame qué tienes en mente, la fecha y demás detalles y te digo cosillas para ver si es viable 🌿');
-    setTimeout(() => {
-      addQuickOptions(['🎂 Cumple infantil', '🥂 Cumple adulto', '💍 Boda o evento', '🤔 Una idea loca'], (opt) => {
-        addMessage('user', opt);
-        const map = {
-          '🎂 Cumple infantil': '¡Ohhh, qué bonito! 🥹 Los cumples de los peques son los favoritos de Carolina.\n\n¿Tienes algún personaje o temática en mente? Si tienes una foto de ejemplo mándamela sin problema, y dime también la fecha de la fiesta para ir mirando 😊',
-          '🥂 Cumple adulto': '¡Ohhh, qué guapo! 🥂 Los cumples de adultos molan un montón porque se pueden hacer cosas súper originales y elegantes.\n\n¿Qué número se cumple y qué estilo le pega a la persona? Cuéntame la fecha también y vamos viendo 🎉',
-          '💍 Boda o evento': '¡Qué ilusión! 🌸 Una piñata en una boda o evento es ese detalle que nadie se espera y todo el mundo recuerda.\n\nCuéntame para cuándo sería, qué estética tiene el evento y la zona, y te digo cosillas 😊',
-          '🤔 Una idea loca': '¡Me encantan las ideas locas! 😂🎊\n\nCuéntame qué tienes en mente, la fecha y demás detalles y te digo si es viable. Que a veces son un locurón de grandes, pero para eso estamos 🙈 Si tienes foto, mándamela.'
-        };
-        const reply = map[opt];
-        conversationHistory.push({ role: 'user', content: opt });
-        conversationHistory.push({ role: 'assistant', content: reply });
-        setTimeout(() => addMessage('bot', reply), 800);
-      });
-    }, 700);
-  }, 400);
-}
+// Cerrar lightbox con Escape
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 </script>
 </body>
 </html>
