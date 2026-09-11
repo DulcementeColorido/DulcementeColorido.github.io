@@ -17,6 +17,13 @@
 html { scroll-behavior: smooth; }
 body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--dark); overflow-x: hidden; }
 
+/* ═══════ PANTALLAS (navegación por pestañas) ═══════ */
+.pantalla { display: none; animation: fadeInPantalla .4s ease; }
+.pantalla.activa { display: block; }
+@keyframes fadeInPantalla { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.nav-tab { cursor: pointer; }
+.nav-tab.active { color: var(--turq); font-weight: 600; }
+
 /* BANNER */
 .banner { background: var(--coral); color: white; text-align: center; padding: 10px 20px; font-size: 13px; font-weight: 500; letter-spacing: .04em; }
 .banner strong { background: rgba(255,255,255,.2); padding: 2px 10px; border-radius: 20px; margin-left: 8px; }
@@ -208,15 +215,18 @@ footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 52px 80
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo"><span class="logo-dot"></span>Dulcemente<em>Colorido</em></a>
+  <a onclick="mostrarPantalla('inicio')" class="nav-logo" style="cursor:pointer;"><span class="logo-dot"></span>Dulcemente<em>Colorido</em></a>
   <ul class="nav-links">
-    <li><a href="#galeria">Galería</a></li>
-    <li><a href="#proceso">Proceso</a></li>
-    <li><a href="#proceso">Disponibilidad</a></li>
+    <li><a onclick="mostrarPantalla('inicio')" class="nav-tab active" data-tab="inicio">Inicio</a></li>
+    <li><a onclick="mostrarPantalla('galeria')" class="nav-tab" data-tab="galeria">Galería</a></li>
+    <li><a onclick="mostrarPantalla('proceso')" class="nav-tab" data-tab="proceso">Proceso</a></li>
+    <li><a onclick="mostrarPantalla('encargo')" class="nav-tab" data-tab="encargo">Encargar</a></li>
   </ul>
-  <a href="#encargo" class="nav-cta">¡Quiero mi piñata!</a>
+  <a onclick="mostrarPantalla('encargo')" class="nav-cta">¡Quiero mi piñata!</a>
 </nav>
 
+<!-- ═══ PANTALLA: INICIO ═══ -->
+<div class="pantalla activa" id="pantalla-inicio">
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg1"></div>
@@ -226,7 +236,7 @@ footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 52px 80
     <div class="hero-eyebrow"><span></span>Piñatas artesanales · Ibiza · Bajo encargo<span></span></div>
     <h1>La piñata más<br><em>bonita</em> que has visto<br><span class="coral">hecha a mano para ti.</span></h1>
     <p class="hero-sub">Piñatas artesanales únicas, pensadas para lucir en tu celebración y guardarlas de recuerdo. Cada pieza es diferente — como la persona que la inspira.</p>
-    <a href="#encargo" class="hero-cta"><span class="cta-icon">🎊</span>¡Quiero mi Piñata!</a>
+    <a onclick="mostrarPantalla('encargo')" class="hero-cta"><span class="cta-icon">🎊</span>¡Quiero mi Piñata!</a>
     <div class="hero-badges">
       <div class="hbadge"><span class="hbadge-n">100%</span><span class="hbadge-l">Hecha a mano</span></div>
       <div class="hbadge"><span class="hbadge-n">✦</span><span class="hbadge-l">Pieza única</span></div>
@@ -244,7 +254,7 @@ footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 52px 80
     <div class="intro-texto">
       <div class="eyebrow">Hola 👋</div>
       <h2>Soy <em>Carolina</em></h2>
-      <p>Todo empezó cuando nació mi hija y quise que su primer cumpleaños fuera mágico de verdad. No encontré la piñata que soñaba... así que la hice yo misma.</p>
+      <p>Todo empezó cuando nació mi hija y quise que su primer cumpleaños fuera mágico de verdad. Soñaba con una fiesta de estrellas... pero no encontraba nada. A veces lo que imaginamos no se consigue a tiempo, o ya no está de moda —me pasó también con un Baby Shark que no aparecía por ningún lado—. Así que decidí hacer la piñata yo misma.</p>
       <p>Después vinieron las de sus primos, las de las amigas, y las primeras ventas. Hoy hago piñatas a mano desde Ibiza, poniendo en cada una el mismo cariño que puse en aquella primera 🌿</p>
       <p class="intro-firma">Cada pieza es única, como la celebración que la inspira.</p>
     </div>
@@ -252,6 +262,10 @@ footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 52px 80
 </section>
 
 <!-- CARRUSEL -->
+</div><!-- fin pantalla-inicio -->
+
+<!-- ═══ PANTALLA: GALERÍA ═══ -->
+<div class="pantalla" id="pantalla-galeria">
 <section class="section carrusel-section" id="galeria">
   <div class="carrusel-header">
     <div class="eyebrow eyebrow-center">Galería de trabajo</div>
@@ -283,12 +297,16 @@ footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 52px 80
 </section>
 
 <!-- LIGHTBOX -->
+</div><!-- fin pantalla-galeria -->
+
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
   <button class="lightbox-close" onclick="closeLightbox()">✕</button>
   <img id="lightboxImg" src="" alt=""/>
   <div class="lightbox-cap" id="lightboxCap"></div>
 </div>
 
+<!-- ═══ PANTALLA: PROCESO ═══ -->
+<div class="pantalla" id="pantalla-proceso">
 <!-- CÓMO FUNCIONA + CUPOS (compacto) -->
 <section class="section como-section" id="proceso">
   <div class="como-header">
@@ -315,13 +333,17 @@ footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 52px 80
         <div class="cupo-mini free">✨</div>
       </div>
       <p class="cupos-panel-status"><strong>1 plaza libre</strong> este mes</p>
-      <a href="#encargo" class="cupos-panel-btn">Reservar la mía</a>
+      <a onclick="mostrarPantalla('encargo')" class="cupos-panel-btn">Reservar la mía</a>
     </div>
   </div>
   <p class="como-nota" style="text-align:center;">✦ Cada pieza la hace Carolina a mano, no una fábrica.</p>
 </section>
 
 <!-- FORMULARIO -->
+</div><!-- fin pantalla-proceso -->
+
+<!-- ═══ PANTALLA: ENCARGO ═══ -->
+<div class="pantalla" id="pantalla-encargo">
 <section class="section form-section" id="encargo">
   <div class="form-wrap">
     <div class="form-header">
@@ -384,15 +406,17 @@ footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 52px 80
 </section>
 
 <!-- FOOTER -->
+</div><!-- fin pantalla-encargo -->
+
 <footer>
   <div class="footer-left">
     <div class="brand">Dulcemente<em>Colorido</em></div>
     <p>© 2025 · Piñatas artesanales · Ibiza · by Carolina ♡</p>
   </div>
   <div class="footer-links">
-    <a onclick="document.getElementById('galeria').scrollIntoView()">Galería</a>
-    <a onclick="document.getElementById('proceso').scrollIntoView()">Proceso</a>
-    <a onclick="document.getElementById('encargo').scrollIntoView()">Pedir encargo</a>
+    <a onclick="mostrarPantalla('galeria')">Galería</a>
+    <a onclick="mostrarPantalla('proceso')">Proceso</a>
+    <a onclick="mostrarPantalla('encargo')">Pedir encargo</a>
     <a href="https://www.tiktok.com/@dulcementecolorido" target="_blank">TikTok</a>
   </div>
   <span class="footer-badge">Hecho a mano con amor ♡</span>
@@ -402,6 +426,25 @@ footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 52px 80
 <a class="wa-float" href="https://wa.me/34664363475?text=Hola%20Carolina!%20Me%20interesa%20encargar%20una%20pi%C3%B1ata%20🎉" target="_blank">💬</a>
 
 <script>
+// ═══════ NAVEGACIÓN POR PANTALLAS (pestañas) ═══════
+function mostrarPantalla(nombre) {
+  // Ocultar todas las pantallas
+  document.querySelectorAll('.pantalla').forEach(p => p.classList.remove('activa'));
+  // Mostrar la elegida
+  const destino = document.getElementById('pantalla-' + nombre);
+  if (destino) destino.classList.add('activa');
+  // Actualizar el menú activo
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  const tab = document.querySelector('.nav-tab[data-tab="' + nombre + '"]');
+  if (tab) tab.classList.add('active');
+  // Subir arriba del todo al cambiar de pantalla
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Si abrimos galería, recalcular el carrusel (estaba oculto)
+  if (nombre === 'galeria' && typeof goTo === 'function') {
+    setTimeout(() => { buildDots(); goTo(0); }, 100);
+  }
+}
+
 // ═══════ CARRUSEL ═══════
 const track = document.getElementById('track');
 const slides = track.querySelectorAll('.carrusel-slide');
