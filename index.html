@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dulcemente Colorido · Piñatas artesanales · Ibiza</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --turq: #3DCCC7; --turq-dark: #2BB5B0; --turq-pale: #E6F9F8;
+  --coral: #F47C7C; --coral-dark: #E06060; --coral-pale: #FEF0F0;
+  --cream: #FDF8F3; --cream-dark: #F5EDE2;
+  --dark: #2C2C2C; --mid: #5A5A5A; --light: #9A9A9A;
+  --green: #25D366; --green-dark: #1DB954;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--dark); overflow-x: hidden; }
+
+/* ═══════ PANTALLAS (navegación por pestañas) ═══════ */
+.pantalla { display: none; animation: fadeInPantalla .4s ease; }
+.pantalla.activa { display: block; }
+@keyframes fadeInPantalla { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.nav-tab { cursor: pointer; }
+.nav-tab.active { color: var(--turq); font-weight: 600; }
+
+/* BANNER */
+.banner { background: var(--coral); color: white; text-align: center; padding: 10px 20px; font-size: 13px; font-weight: 500; letter-spacing: .04em; }
+.banner strong { background: rgba(255,255,255,.2); padding: 2px 10px; border-radius: 20px; margin-left: 8px; }
+
+/* NAV */
+nav { background: rgba(253,248,243,.95); backdrop-filter: blur(12px); padding: 14px 48px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(0,0,0,.06); }
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 19px; color: var(--dark); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.nav-logo em { color: var(--turq); font-style: italic; }
+.nav-logo .logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--coral); display: inline-block; }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a { font-size: 13px; color: var(--mid); text-decoration: none; font-weight: 500; transition: color .2s; }
+.nav-links a:hover { color: var(--turq); }
+.nav-cta { background: var(--coral); color: white; padding: 10px 22px; border-radius: 50px; font-size: 13px; font-weight: 600; text-decoration: none; transition: background .2s, transform .2s; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+.nav-cta:hover { background: var(--coral-dark); transform: translateY(-1px); }
+
+/* HERO */
+.hero { min-height: 88vh; display: grid; place-items: center; text-align: center; padding: 70px 40px; background: var(--cream); position: relative; overflow: hidden; }
+.hero-bg1 { position: absolute; top: -160px; right: -160px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, var(--turq-pale), transparent 65%); pointer-events: none; }
+.hero-bg2 { position: absolute; bottom: -120px; left: -120px; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, var(--coral-pale), transparent 65%); pointer-events: none; }
+.hero-content { position: relative; z-index: 2; max-width: 780px; }
+.hero-logo { width: 150px; height: 150px; display: flex; align-items: center; justify-content: center; margin: 0 auto 26px; border-radius: 50%; overflow: hidden; box-shadow: 0 8px 36px rgba(0,0,0,.10); }
+.hero-logo img { width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scale(1.4); }
+.hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: var(--turq-pale); color: var(--turq); padding: 8px 20px; border-radius: 50px; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 26px; border: 1px solid rgba(61,204,199,.25); }
+.hero-eyebrow span { width: 6px; height: 6px; border-radius: 50%; background: var(--turq); }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5.5vw, 64px); line-height: 1.12; font-weight: 600; margin-bottom: 22px; }
+.hero h1 em { font-style: italic; color: var(--turq); }
+.hero h1 .coral { color: var(--coral); }
+.hero-sub { font-size: 18px; color: var(--mid); font-weight: 300; line-height: 1.8; max-width: 560px; margin: 0 auto 40px; }
+.hero-cta { display: inline-flex; align-items: center; gap: 12px; background: var(--coral); color: white; padding: 18px 44px; border-radius: 50px; font-size: 17px; font-weight: 600; text-decoration: none; box-shadow: 0 8px 32px rgba(244,124,124,.4); transition: all .3s; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+.hero-cta:hover { background: var(--coral-dark); transform: translateY(-3px) scale(1.02); box-shadow: 0 14px 44px rgba(244,124,124,.55); }
+.hero-cta .cta-icon { font-size: 20px; transition: transform .3s; }
+.hero-cta:hover .cta-icon { transform: rotate(15deg) scale(1.2); }
+.hero-badges { display: flex; gap: 28px; margin-top: 48px; justify-content: center; flex-wrap: wrap; }
+.hbadge { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.hbadge-n { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600; color: var(--turq); }
+.hbadge-l { font-size: 11px; color: var(--light); letter-spacing: .06em; text-transform: uppercase; }
+
+/* SECCIONES */
+.section { padding: 88px 80px; }
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--coral); margin-bottom: 14px; }
+.eyebrow::before, .eyebrow::after { content: '·'; opacity: .5; }
+.eyebrow-center { justify-content: center; }
+h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3.5vw, 44px); font-weight: 600; line-height: 1.2; margin-bottom: 16px; }
+h2 em { font-style: italic; color: var(--turq); }
+.section-sub { font-size: 16px; color: var(--mid); font-weight: 300; line-height: 1.8; max-width: 520px; margin: 0 auto; }
+
+/* ═══════ CARRUSEL (más pequeño y elegante) ═══════ */
+.carrusel-section { background: var(--cream-dark); overflow: hidden; }
+.carrusel-header { text-align: center; margin-bottom: 44px; }
+.carrusel-wrap { position: relative; max-width: 1000px; margin: 0 auto; }
+.carrusel-track-outer { overflow: hidden; padding: 8px; }
+.carrusel-track { display: flex; gap: 20px; transition: transform .45s cubic-bezier(.4,0,.2,1); will-change: transform; }
+.carrusel-slide { min-width: calc(25% - 15px); border-radius: 18px; overflow: hidden; position: relative; background: var(--cream); box-shadow: 0 4px 20px rgba(0,0,0,.08); transition: transform .3s, box-shadow .3s; }
+.carrusel-slide:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(0,0,0,.13); }
+.slide-img { height: 220px; position: relative; overflow: hidden; cursor: zoom-in; }
+.slide-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.carrusel-slide:hover .slide-img img { transform: scale(1.06); }
+.slide-img::after { content: '🔍'; position: absolute; bottom: 10px; right: 10px; background: rgba(255,255,255,.9); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; opacity: 0; transition: opacity .3s; }
+.slide-img:hover::after { opacity: 1; }
+.slide-tag { position: absolute; top: 12px; left: 12px; background: white; padding: 5px 12px; border-radius: 20px; font-size: 10px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--dark); z-index: 3; box-shadow: 0 2px 8px rgba(0,0,0,.15); }
+.slide-tag.fav { background: var(--coral); color: white; }
+.slide-body { padding: 16px 18px; }
+.slide-body h4 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.slide-body p { font-size: 12.5px; color: var(--mid); font-weight: 300; line-height: 1.55; }
+.carrusel-btn { position: absolute; top: 40%; transform: translateY(-50%); width: 46px; height: 46px; border-radius: 50%; background: white; border: none; cursor: pointer; box-shadow: 0 4px 18px rgba(0,0,0,.14); display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--dark); z-index: 10; transition: all .2s; }
+.carrusel-btn:hover { background: var(--turq); color: white; transform: translateY(-50%) scale(1.08); }
+.btn-prev { left: -18px; }
+.btn-next { right: -18px; }
+.carrusel-dots { display: flex; justify-content: center; gap: 7px; margin-top: 28px; }
+.c-dot { width: 8px; height: 8px; border-radius: 50%; background: #D5CCC4; border: none; cursor: pointer; transition: all .25s; padding: 0; }
+.c-dot.active { width: 22px; border-radius: 4px; background: var(--turq); }
+.swipe-hint { text-align: center; margin-top: 14px; font-size: 12px; color: var(--light); }
+.tiktok-cta { display: inline-flex; align-items: center; gap: 10px; background: var(--dark); color: white; padding: 12px 26px; border-radius: 50px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all .25s; box-shadow: 0 4px 18px rgba(0,0,0,.15); }
+.tiktok-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 26px rgba(0,0,0,.25); }
+
+/* ═══════ LIGHTBOX (foto en tamaño real) ═══════ */
+.lightbox { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,.85); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity .3s; padding: 20px; }
+.lightbox.open { opacity: 1; pointer-events: all; }
+.lightbox img { max-width: 90%; max-height: 85vh; border-radius: 12px; box-shadow: 0 20px 80px rgba(0,0,0,.5); }
+.lightbox-close { position: absolute; top: 24px; right: 28px; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,.15); border: none; color: white; font-size: 24px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .2s; }
+.lightbox-close:hover { background: rgba(255,255,255,.3); }
+.lightbox-cap { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); color: white; font-size: 14px; background: rgba(0,0,0,.5); padding: 8px 18px; border-radius: 20px; }
+
+/* ═══════ INTRO / SOBRE CAROLINA ═══════ */
+.intro-section { background: var(--cream-dark); padding: 72px 80px; }
+.intro-wrap { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 220px 1fr; gap: 48px; align-items: center; }
+.intro-foto { width: 220px; height: 220px; border-radius: 50%; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,.1); flex-shrink: 0; }
+.intro-foto img { width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scale(1.4); }
+.intro-texto h2 { margin-bottom: 16px; }
+.intro-texto p { font-size: 15px; color: var(--mid); font-weight: 300; line-height: 1.8; margin-bottom: 14px; }
+.intro-firma { font-family: 'Playfair Display', serif; font-style: italic; color: var(--coral) !important; font-size: 16px !important; margin-top: 4px; }
+
+/* ═══════ CÓMO FUNCIONA + CUPOS (compacto) ═══════ */
+.como-section { background: var(--cream); }
+.como-header { text-align: center; margin-bottom: 44px; }
+.como-header .section-sub { margin: 0 auto; }
+.como-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: stretch; }
+.como-nota { font-size: 13px; color: var(--light); font-style: italic; margin-top: 32px; }
+
+/* Panel de cupos compacto */
+.cupos-panel { background: var(--turq); color: white; border-radius: 24px; padding: 32px 28px; display: flex; flex-direction: column; justify-content: center; text-align: center; position: relative; overflow: hidden; }
+.cupos-panel::before { content: ''; position: absolute; top: -40px; right: -40px; width: 180px; height: 180px; border-radius: 50%; background: rgba(255,255,255,.08); pointer-events: none; }
+.cupos-panel-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.7); }
+.cupos-panel h3 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 600; line-height: 1.15; margin: 10px 0; color: white; }
+.cupos-panel h3 em { font-style: italic; color: rgba(255,255,255,.8); }
+.cupos-panel-head p { font-size: 13px; color: rgba(255,255,255,.75); font-weight: 300; line-height: 1.6; margin-bottom: 22px; }
+.cupos-dots-row { display: flex; gap: 10px; justify-content: center; margin-bottom: 14px; position: relative; z-index: 2; }
+.cupo-mini { width: 46px; height: 46px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+.cupo-mini.taken { background: rgba(244,124,124,.3); border: 1.5px solid rgba(244,124,124,.5); }
+.cupo-mini.free { background: rgba(255,255,255,.2); border: 1.5px solid rgba(255,255,255,.5); }
+.cupos-panel-status { font-size: 14px; color: rgba(255,255,255,.9); margin-bottom: 22px; }
+.cupos-panel-status strong { color: white; }
+.cupos-panel-btn { display: inline-block; background: white; color: var(--turq-dark); padding: 13px 30px; border-radius: 50px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all .25s; position: relative; z-index: 2; }
+.cupos-panel-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.15); }
+.acordeon { display: flex; flex-direction: column; gap: 12px; }
+.ac-item { border-radius: 18px; overflow: hidden; border: 2px solid transparent; background: white; box-shadow: 0 2px 16px rgba(0,0,0,.05); transition: border-color .3s, box-shadow .3s; }
+.ac-item.active { border-color: var(--turq); box-shadow: 0 6px 32px rgba(61,204,199,.18); }
+.ac-header { display: flex; align-items: center; gap: 18px; padding: 22px 24px; cursor: pointer; user-select: none; }
+.ac-num { width: 48px; height: 48px; border-radius: 14px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 600; background: var(--cream-dark); color: var(--mid); transition: all .3s; }
+.ac-item.active .ac-num { background: var(--turq); color: white; }
+.ac-title { font-size: 16px; font-weight: 600; flex: 1; }
+.ac-arrow { font-size: 20px; color: var(--light); transition: transform .3s; }
+.ac-item.active .ac-arrow { transform: rotate(180deg); color: var(--turq); }
+.ac-body { max-height: 0; overflow: hidden; transition: max-height .4s cubic-bezier(.4,0,.2,1), padding .3s; padding: 0 24px; }
+.ac-item.active .ac-body { max-height: 200px; padding: 0 24px 24px; }
+.ac-body p { font-size: 15px; color: var(--mid); font-weight: 300; line-height: 1.8; }
+.ac-body .ac-tag { display: inline-block; background: var(--turq-pale); color: var(--turq); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-top: 12px; }
+
+/* ═══════ FORMULARIO ═══════ */
+.form-section { background: var(--cream-dark); }
+.form-wrap { max-width: 620px; margin: 0 auto; }
+.form-header { text-align: center; margin-bottom: 36px; }
+.form-header .eyebrow { justify-content: center; }
+.form-header .section-sub { margin: 0 auto; }
+.form-card { background: white; border-radius: 28px; box-shadow: 0 12px 50px rgba(0,0,0,.08); padding: 40px; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--dark); margin-bottom: 7px; letter-spacing: .02em; }
+.form-group label .req { color: var(--coral); }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 13px 16px; border: 1.5px solid #E5DDD4; border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--dark); background: var(--cream); transition: border-color .2s, box-shadow .2s; outline: none; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--turq); box-shadow: 0 0 0 3px rgba(61,204,199,.12); background: white; }
+.form-group textarea { min-height: 90px; resize: vertical; }
+.form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238A8A8A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.wa-submit { width: 100%; margin-top: 8px; display: inline-flex; align-items: center; justify-content: center; gap: 12px; background: var(--green); color: white; padding: 17px; border-radius: 50px; font-size: 16px; font-weight: 700; text-decoration: none; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all .25s; box-shadow: 0 6px 24px rgba(37,211,102,.35); }
+.wa-submit:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 10px 32px rgba(37,211,102,.5); }
+.form-alt { text-align: center; margin-top: 16px; font-size: 13px; color: var(--light); }
+.form-alt a { color: var(--turq); text-decoration: none; font-weight: 500; }
+.form-nota { text-align: center; font-size: 12px; color: var(--light); margin-top: 18px; line-height: 1.6; }
+
+/* ═══════ FOOTER ═══════ */
+footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 52px 80px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+.footer-left .brand { font-family: 'Playfair Display', serif; font-size: 18px; color: white; }
+.footer-left .brand em { color: var(--turq); font-style: italic; }
+.footer-left p { font-size: 12px; margin-top: 6px; color: rgba(255,255,255,.35); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { font-size: 13px; color: rgba(255,255,255,.45); text-decoration: none; transition: color .2s; cursor: pointer; }
+.footer-links a:hover { color: var(--turq); }
+.footer-badge { background: rgba(61,204,199,.12); border: 1px solid rgba(61,204,199,.2); color: var(--turq); font-size: 12px; padding: 6px 16px; border-radius: 20px; }
+
+/* WhatsApp flotante */
+.wa-float { position: fixed; bottom: 24px; right: 24px; z-index: 500; width: 60px; height: 60px; border-radius: 50%; background: var(--green); color: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 24px rgba(37,211,102,.45); text-decoration: none; font-size: 28px; transition: transform .25s; animation: pulse-wa 2.5s infinite; }
+.wa-float:hover { transform: scale(1.1); }
+@keyframes pulse-wa { 0%,100% { box-shadow: 0 6px 24px rgba(37,211,102,.45); } 50% { box-shadow: 0 6px 32px rgba(37,211,102,.7), 0 0 0 10px rgba(37,211,102,.1); } }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .section { padding: 60px 24px; }
+  nav { padding: 12px 20px; }
+  .nav-links { display: none; }
+  .hero { padding: 60px 24px; }
+  .carrusel-slide { min-width: calc(70% - 10px); }
+  .slide-img { height: 240px; }
+  .btn-prev { left: -8px; }
+  .btn-next { right: -8px; }
+  .como-grid { grid-template-columns: 1fr; gap: 36px; }
+  .intro-section { padding: 56px 24px; }
+  .intro-wrap { grid-template-columns: 1fr; gap: 28px; text-align: center; justify-items: center; }
+  .form-card { padding: 26px; }
+  .form-row { grid-template-columns: 1fr; gap: 0; }
+  footer { flex-direction: column; text-align: center; padding: 40px 24px; }
+  .footer-links { justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- BANNER -->
+<div class="banner">🎉 Solo <strong>4 encargos al mes</strong> — Asegura el tuyo antes de que se agoten</div>
+
+<!-- NAV -->
+<nav>
+  <a onclick="mostrarPantalla('inicio')" class="nav-logo" style="cursor:pointer;"><span class="logo-dot"></span>Dulcemente<em>Colorido</em></a>
+  <ul class="nav-links">
+    <li><a onclick="mostrarPantalla('inicio')" class="nav-tab active" data-tab="inicio">Inicio</a></li>
+    <li><a onclick="mostrarPantalla('galeria')" class="nav-tab" data-tab="galeria">Galería</a></li>
+    <li><a onclick="mostrarPantalla('proceso')" class="nav-tab" data-tab="proceso">Proceso</a></li>
+    <li><a onclick="mostrarPantalla('encargo')" class="nav-tab" data-tab="encargo">Encargar</a></li>
+  </ul>
+  <a onclick="mostrarPantalla('encargo')" class="nav-cta">¡Quiero mi piñata!</a>
+</nav>
+
+<!-- ═══ PANTALLA: INICIO ═══ -->
+<div class="pantalla activa" id="pantalla-inicio">
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg1"></div>
+  <div class="hero-bg2"></div>
+  <div class="hero-content">
+    <div class="hero-logo"><img src="fotos/logo.png" alt="Dulcemente Colorido"/></div>
+    <div class="hero-eyebrow"><span></span>Piñatas artesanales · Ibiza · Bajo encargo<span></span></div>
+    <h1>La piñata más<br><em>bonita</em> que has visto<br><span class="coral">hecha a mano para ti.</span></h1>
+    <p class="hero-sub">Piñatas artesanales únicas, pensadas para lucir en tu celebración y guardarlas de recuerdo. Cada pieza es diferente — como la persona que la inspira.</p>
+    <a onclick="mostrarPantalla('encargo')" class="hero-cta"><span class="cta-icon">🎊</span>¡Quiero mi Piñata!</a>
+    <div class="hero-badges">
+      <div class="hbadge"><span class="hbadge-n">100%</span><span class="hbadge-l">Hecha a mano</span></div>
+      <div class="hbadge"><span class="hbadge-n">✦</span><span class="hbadge-l">Pieza única</span></div>
+      <div class="hbadge"><span class="hbadge-n">Ibiza</span><span class="hbadge-l">Entrega en la isla</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO / SOBRE CAROLINA -->
+<section class="intro-section" id="sobre">
+  <div class="intro-wrap">
+    <div class="intro-foto">
+      <img src="fotos/logo.png" alt="Dulcemente Colorido"/>
+    </div>
+    <div class="intro-texto">
+      <div class="eyebrow">Hola 👋</div>
+      <h2>Soy <em>Carolina</em></h2>
+      <p>Todo empezó cuando nació mi hija y quise que su primer cumpleaños fuera mágico de verdad. Soñaba con una fiesta de estrellas... pero no encontraba nada. A veces lo que imaginamos no se consigue a tiempo, o ya no está de moda —me pasó también con un Baby Shark que no aparecía por ningún lado—. Así que decidí hacer la piñata yo misma.</p>
+      <p>Después vinieron las de sus primos, las de las amigas, y las primeras ventas. Hoy hago piñatas a mano desde Ibiza, poniendo en cada una el mismo cariño que puse en aquella primera 🌿</p>
+      <p class="intro-firma">Cada pieza es única, como la celebración que la inspira.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CARRUSEL -->
+</div><!-- fin pantalla-inicio -->
+
+<!-- ═══ PANTALLA: GALERÍA ═══ -->
+<div class="pantalla" id="pantalla-galeria">
+<section class="section carrusel-section" id="galeria">
+  <div class="carrusel-header">
+    <div class="eyebrow eyebrow-center">Galería de trabajo</div>
+    <h2>Piezas que enamoran <em>y se conservan</em></h2>
+    <p class="section-sub">Toca una foto para verla en grande. Muchos clientes las guardan de recuerdo.</p>
+  </div>
+  <div class="carrusel-wrap">
+    <button class="carrusel-btn btn-prev" id="prev">‹</button>
+    <div class="carrusel-track-outer">
+      <div class="carrusel-track" id="track">
+        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/rana.jpg','Rana René · Diseño estrella')"><img src="fotos/rana.jpg" alt="Rana René"/><span class="slide-tag fav">⭐ La favorita</span></div><div class="slide-body"><h4>Rana René</h4><p>La más querida en redes 🐸 Si sueñas un personaje, lo hacemos realidad.</p></div></div>
+        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/cassette.jpg','Cinta de cassette · Juan 40')"><img src="fotos/cassette.jpg" alt="Cassette 40"/><span class="slide-tag">Adultos · 40</span></div><div class="slide-body"><h4>Cassette · 40 años</h4><p>Temática años 80, personalizada. Aún la conservan.</p></div></div>
+        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/astronauta.jpg','Planeta astronauta · Chloe 8')"><img src="fotos/astronauta.jpg" alt="Astronauta"/><span class="slide-tag">Infantil</span></div><div class="slide-body"><h4>Astronauta · Chloe 8</h4><p>Piñata espacial con detalles holográficos.</p></div></div>
+        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/mariposa.jpg','Mariposa con flores de papel')"><img src="fotos/mariposa.jpg" alt="Mariposa"/><span class="slide-tag">Botánico</span></div><div class="slide-body"><h4>Mariposa botánica</h4><p>Con flores artesanales de papel. Pieza única.</p></div></div>
+        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/goku.jpg','Goku gigante · Dragon Ball')"><img src="fotos/goku.jpg" alt="Goku"/><span class="slide-tag">Gigante</span></div><div class="slide-body"><h4>Goku gigante</h4><p>Más de 80cm de puro detalle. De las que se guardan.</p></div></div>
+        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/numero3.jpg','Número 3 · Hada Alma')"><img src="fotos/numero3.jpg" alt="Número 3"/><span class="slide-tag">Número</span></div><div class="slide-body"><h4>Número 3 · Hada</h4><p>Número gigante con hada y flores.</p></div></div>
+        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/stitch.jpg','Stitch · Edición especial')"><img src="fotos/stitch.jpg" alt="Stitch"/><span class="slide-tag">Personaje</span></div><div class="slide-body"><h4>Stitch</h4><p>Con flor hawaiana. Azul marino y detalles.</p></div></div>
+      </div>
+    </div>
+    <button class="carrusel-btn btn-next" id="next">›</button>
+  </div>
+  <div class="carrusel-dots" id="dots"></div>
+  <p class="swipe-hint">👆 Desliza o usa las flechas · Toca para ver en grande</p>
+  <div style="text-align:center; margin-top:28px;">
+    <a href="https://www.tiktok.com/@dulcementecolorido" target="_blank" class="tiktok-cta">
+      <span style="font-size:18px;">🎬</span> Mira cómo se hacen en TikTok · @dulcementecolorido
+    </a>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+</div><!-- fin pantalla-galeria -->
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightboxImg" src="" alt=""/>
+  <div class="lightbox-cap" id="lightboxCap"></div>
+</div>
+
+<!-- ═══ PANTALLA: PROCESO ═══ -->
+<div class="pantalla" id="pantalla-proceso">
+<!-- CÓMO FUNCIONA + CUPOS (compacto) -->
+<section class="section como-section" id="proceso">
+  <div class="como-header">
+    <div class="eyebrow eyebrow-center">El proceso</div>
+    <h2>Así nace <em>tu piñata</em></h2>
+    <p class="section-sub">Haz clic en cada paso para descubrir cómo funciona. Es más sencillo de lo que parece.</p>
+  </div>
+  <div class="como-grid">
+    <div class="acordeon" id="acordeon">
+      <div class="ac-item active"><div class="ac-header"><div class="ac-num">1</div><span class="ac-title">Cuéntanos tu idea</span><span class="ac-arrow">↓</span></div><div class="ac-body"><p>Rellenas el formulario con lo que celebras, la fecha, el personaje o temática y tus colores. Con eso Carolina ya sabe por dónde empezar.</p><span class="ac-tag">📩 Te llega directo a su WhatsApp</span></div></div>
+      <div class="ac-item"><div class="ac-header"><div class="ac-num">2</div><span class="ac-title">Carolina te da el ok</span><span class="ac-arrow">↓</span></div><div class="ac-body"><p>Ella revisa tu idea y la agenda, y en menos de 24h te confirma por WhatsApp si es viable, el precio y la fecha. La reserva cuenta desde ese ok.</p><span class="ac-tag">⏱ Mínimo 2 semanas de antelación</span></div></div>
+      <div class="ac-item"><div class="ac-header"><div class="ac-num">3</div><span class="ac-title">¡A lucirla!</span><span class="ac-arrow">↓</span></div><div class="ac-body"><p>La recoges gratis en Sant Jordi o te la llevamos a domicilio. Es una pieza para presumir en tu fiesta y quedártela de recuerdo 😍</p><span class="ac-tag">📍 Entrega en toda la isla</span></div></div>
+    </div>
+    <div class="cupos-panel">
+      <div class="cupos-panel-head">
+        <span class="cupos-panel-eyebrow">Disponibilidad</span>
+        <h3>Solo <em>4 piñatas</em><br>cada mes</h3>
+        <p>Para dedicarle a cada una el tiempo y el mimo que merece.</p>
+      </div>
+      <div class="cupos-dots-row">
+        <div class="cupo-mini taken">🎉</div>
+        <div class="cupo-mini taken">🎉</div>
+        <div class="cupo-mini taken">🎉</div>
+        <div class="cupo-mini free">✨</div>
+      </div>
+      <p class="cupos-panel-status"><strong>1 plaza libre</strong> este mes</p>
+      <a onclick="mostrarPantalla('encargo')" class="cupos-panel-btn">Reservar la mía</a>
+    </div>
+  </div>
+  <p class="como-nota" style="text-align:center;">✦ Cada pieza la hace Carolina a mano, no una fábrica.</p>
+</section>
+
+<!-- FORMULARIO -->
+</div><!-- fin pantalla-proceso -->
+
+<!-- ═══ PANTALLA: ENCARGO ═══ -->
+<div class="pantalla" id="pantalla-encargo">
+<section class="section form-section" id="encargo">
+  <div class="form-wrap">
+    <div class="form-header">
+      <div class="eyebrow eyebrow-center">Pide tu encargo</div>
+      <h2>¿Tienes una fiesta <em>en mente?</em></h2>
+      <p class="section-sub">Rellena esto y al enviar se abre WhatsApp con tu mensaje listo. Carolina te responde en menos de 24h.</p>
+    </div>
+    <div class="form-card">
+      <div class="form-group">
+        <label>Tu nombre <span class="req">*</span></label>
+        <input type="text" id="f_nombre" placeholder="¿Cómo te llamas?"/>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Tipo de celebración</label>
+          <select id="f_tipo">
+            <option value="">Selecciona...</option>
+            <option>Cumpleaños infantil</option>
+            <option>Cumpleaños adulto (30, 40, 50...)</option>
+            <option>Boda o aniversario</option>
+            <option>Evento corporativo</option>
+            <option>Otra celebración</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Fecha del evento</label>
+          <input type="text" id="f_fecha" placeholder="Ej: 15 de agosto"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Temática o personaje</label>
+        <input type="text" id="f_tema" placeholder="Ej: Rana René, número 40, unicornio..."/>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Colores que te gustan</label>
+          <input type="text" id="f_colores" placeholder="Ej: pastel, verde y dorado..."/>
+        </div>
+        <div class="form-group">
+          <label>Zona de entrega</label>
+          <select id="f_zona">
+            <option value="">Selecciona...</option>
+            <option>Recojo en Sant Jordi (gratis)</option>
+            <option>Domicilio en Ibiza (5€)</option>
+            <option>Envío a península (coste según tamaño y destino)</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>¿Algo más que quieras contarle a Carolina?</label>
+        <textarea id="f_mas" placeholder="Tamaño, nombre del protagonista, cualquier detalle..."></textarea>
+      </div>
+      <button class="wa-submit" onclick="enviarWhatsApp()">
+        <span style="font-size:22px;">💬</span> Enviar mi encargo por WhatsApp
+      </button>
+      <p class="form-alt">¿Prefieres email? <a href="mailto:carolina.foti@gmail.com?subject=Encargo%20de%20pi%C3%B1ata">Escríbele aquí</a></p>
+      <p class="form-nota">Trabajo exclusivamente bajo encargo · Plazas limitadas cada mes · Mínimo 2 semanas de antelación<br>En Ibiza: recogida gratis en Sant Jordi o domicilio por 5€ · Envíos a península con coste según el tamaño de la pieza y el destino</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+</div><!-- fin pantalla-encargo -->
+
+<footer>
+  <div class="footer-left">
+    <div class="brand">Dulcemente<em>Colorido</em></div>
+    <p>© 2025 · Piñatas artesanales · Ibiza · by Carolina ♡</p>
+  </div>
+  <div class="footer-links">
+    <a onclick="mostrarPantalla('galeria')">Galería</a>
+    <a onclick="mostrarPantalla('proceso')">Proceso</a>
+    <a onclick="mostrarPantalla('encargo')">Pedir encargo</a>
+    <a href="https://www.tiktok.com/@dulcementecolorido" target="_blank">TikTok</a>
+  </div>
+  <span class="footer-badge">Hecho a mano con amor ♡</span>
+</footer>
+
+<!-- WhatsApp flotante -->
+<a class="wa-float" href="https://wa.me/34664363475?text=Hola%20Carolina!%20Me%20interesa%20encargar%20una%20pi%C3%B1ata%20🎉" target="_blank">💬</a>
+
+<script>
+// ═══════ NAVEGACIÓN POR PANTALLAS (pestañas) ═══════
+function mostrarPantalla(nombre) {
+  // Ocultar todas las pantallas
+  document.querySelectorAll('.pantalla').forEach(p => p.classList.remove('activa'));
+  // Mostrar la elegida
+  const destino = document.getElementById('pantalla-' + nombre);
+  if (destino) destino.classList.add('activa');
+  // Actualizar el menú activo
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  const tab = document.querySelector('.nav-tab[data-tab="' + nombre + '"]');
+  if (tab) tab.classList.add('active');
+  // Subir arriba del todo al cambiar de pantalla
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Si abrimos galería, recalcular el carrusel (estaba oculto)
+  if (nombre === 'galeria' && typeof goTo === 'function') {
+    setTimeout(() => { buildDots(); goTo(0); }, 100);
+  }
+}
+
+// ═══════ CARRUSEL ═══════
+const track = document.getElementById('track');
+const slides = track.querySelectorAll('.carrusel-slide');
+const dotsContainer = document.getElementById('dots');
+let current = 0;
+let slidesVisible = window.innerWidth < 900 ? 1 : 4;
+let maxIndex = Math.max(0, slides.length - slidesVisible);
+
+function buildDots() {
+  dotsContainer.innerHTML = '';
+  for (let i = 0; i <= maxIndex; i++) {
+    const dot = document.createElement('button');
+    dot.className = 'c-dot' + (i === current ? ' active' : '');
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  }
+}
+function goTo(index) {
+  current = Math.max(0, Math.min(index, maxIndex));
+  const slideW = slides[0].offsetWidth + 20;
+  track.style.transform = `translateX(-${current * slideW}px)`;
+  dotsContainer.querySelectorAll('.c-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+}
+document.getElementById('prev').addEventListener('click', () => goTo(current - 1));
+document.getElementById('next').addEventListener('click', () => goTo(current + 1));
+let touchStartX = 0;
+track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+track.addEventListener('touchend', e => { const diff = touchStartX - e.changedTouches[0].clientX; if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1); });
+let autoSlide = setInterval(() => goTo(current < maxIndex ? current + 1 : 0), 4500);
+track.addEventListener('mouseenter', () => clearInterval(autoSlide));
+track.addEventListener('mouseleave', () => { autoSlide = setInterval(() => goTo(current < maxIndex ? current + 1 : 0), 4500); });
+window.addEventListener('resize', () => { slidesVisible = window.innerWidth < 900 ? 1 : 4; maxIndex = Math.max(0, slides.length - slidesVisible); current = Math.min(current, maxIndex); buildDots(); goTo(current); });
+buildDots();
+
+// ═══════ LIGHTBOX ═══════
+function openLightbox(src, cap) {
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightboxCap').textContent = cap;
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); }
+
+// ═══════ ACORDEÓN ═══════
+document.querySelectorAll('.ac-item').forEach(item => {
+  item.querySelector('.ac-header').addEventListener('click', () => {
+    const isActive = item.classList.contains('active');
+    document.querySelectorAll('.ac-item').forEach(i => i.classList.remove('active'));
+    if (!isActive) item.classList.add('active');
+  });
+});
+
+// ═══════ FORMULARIO → WHATSAPP ═══════
+function enviarWhatsApp() {
+  const nombre = document.getElementById('f_nombre').value.trim();
+  if (!nombre) { alert('¡Escribe tu nombre para empezar! 😊'); document.getElementById('f_nombre').focus(); return; }
+  const tipo = document.getElementById('f_tipo').value;
+  const fecha = document.getElementById('f_fecha').value.trim();
+  const tema = document.getElementById('f_tema').value.trim();
+  const colores = document.getElementById('f_colores').value.trim();
+  const zona = document.getElementById('f_zona').value;
+  const mas = document.getElementById('f_mas').value.trim();
+
+  let msg = `¡Hola Carolina! 🎉 Soy ${nombre} y me gustaría encargar una piñata.\n\n`;
+  if (tipo) msg += `🎂 Celebración: ${tipo}\n`;
+  if (fecha) msg += `📅 Fecha: ${fecha}\n`;
+  if (tema) msg += `🎨 Temática: ${tema}\n`;
+  if (colores) msg += `🌈 Colores: ${colores}\n`;
+  if (zona) msg += `📍 Entrega: ${zona}\n`;
+  if (mas) msg += `\n📝 Más detalles: ${mas}\n`;
+  msg += `\n¿Me dices si es viable? ¡Gracias! 🌿`;
+
+  const url = `https://wa.me/34664363475?text=${encodeURIComponent(msg)}`;
+  window.open(url, '_blank');
+}
+
+// Cerrar lightbox con Escape
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+</body>
+</html>
