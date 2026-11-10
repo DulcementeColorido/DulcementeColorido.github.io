@@ -4,6 +4,13 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Dulcemente Colorido · Piñatas artesanales · Ibiza</title>
+<meta name="description" content="Piñatas artesanales únicas hechas a mano en Ibiza, bajo encargo. Cada pieza es diferente, como la persona que la inspira."/>
+<meta name="theme-color" content="#FDF8F3"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://dulcementecolorido.github.io/"/>
+<meta property="og:title" content="Dulcemente Colorido · Piñatas artesanales · Ibiza"/>
+<meta property="og:description" content="Piñatas artesanales únicas hechas a mano en Ibiza, bajo encargo. Cada pieza es diferente, como la persona que la inspira."/>
+<meta property="og:image" content="https://dulcementecolorido.github.io/fotos/logo.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -78,9 +85,9 @@ h2 em { font-style: italic; color: var(--turq); }
 .carrusel-track { display: flex; gap: 20px; transition: transform .45s cubic-bezier(.4,0,.2,1); will-change: transform; }
 .carrusel-slide { min-width: calc(25% - 15px); border-radius: 18px; overflow: hidden; position: relative; background: var(--cream); box-shadow: 0 4px 20px rgba(0,0,0,.08); transition: transform .3s, box-shadow .3s; }
 .carrusel-slide:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(0,0,0,.13); }
-.slide-img { height: 220px; position: relative; overflow: hidden; cursor: zoom-in; }
-.slide-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
-.carrusel-slide:hover .slide-img img { transform: scale(1.06); }
+.slide-img { height: 330px; background: var(--cream-dark); position: relative; overflow: hidden; cursor: zoom-in; }
+.slide-img img { width: 100%; height: 100%; object-fit: contain; padding: 42px 12px 12px; transition: opacity .2s; }
+.carrusel-slide:hover .slide-img img { opacity: .96; }
 .slide-img::after { content: '🔍'; position: absolute; bottom: 10px; right: 10px; background: rgba(255,255,255,.9); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; opacity: 0; transition: opacity .3s; }
 .slide-img:hover::after { opacity: 1; }
 .slide-tag { position: absolute; top: 12px; left: 12px; background: white; padding: 5px 12px; border-radius: 20px; font-size: 10px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--dark); z-index: 3; box-shadow: 0 2px 8px rgba(0,0,0,.15); }
@@ -191,11 +198,15 @@ footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 52px 80
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .section { padding: 60px 24px; }
-  nav { padding: 12px 20px; }
-  .nav-links { display: none; }
+  nav { padding: 12px 20px; flex-wrap: wrap; gap: 12px; }
+  .nav-logo { width: 100%; justify-content: center; gap: 4px; font-size: 19px; }
+  .nav-links { display: flex; width: 100%; justify-content: space-between; gap: 8px; order: 2; }
+  .nav-links a { display: block; padding: 8px 0; font-size: 13px; }
+  .nav-links a.active { color: var(--coral-dark); }
+  .nav-cta { display: none; }
   .hero { padding: 60px 24px; }
   .carrusel-slide { min-width: calc(70% - 10px); }
-  .slide-img { height: 240px; }
+  .slide-img { height: 320px; }
   .btn-prev { left: -8px; }
   .btn-next { right: -8px; }
   .como-grid { grid-template-columns: 1fr; gap: 36px; }
@@ -211,7 +222,7 @@ footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 52px 80
 <body>
 
 <!-- BANNER -->
-<div class="banner">🎉 Solo <strong>4 encargos al mes</strong> — Asegura el tuyo antes de que se agoten</div>
+<div class="banner">🎉 Piñatas por encargo en Ibiza · Máximo 6 encargos al mes</div>
 
 <!-- NAV -->
 <nav>
@@ -235,12 +246,12 @@ footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 52px 80
     <div class="hero-logo"><img src="fotos/logo.png" alt="Dulcemente Colorido"/></div>
     <div class="hero-eyebrow"><span></span>Piñatas artesanales · Ibiza · Bajo encargo<span></span></div>
     <h1>La piñata más<br><em>bonita</em> que has visto<br><span class="coral">hecha a mano para ti.</span></h1>
-    <p class="hero-sub">Piñatas artesanales únicas, pensadas para lucir en tu celebración y guardarlas de recuerdo. Cada pieza es diferente — como la persona que la inspira.</p>
+    <p class="hero-sub">Piñatas artesanales para cumpleaños, baby showers y otras celebraciones. Cada pieza es diferente, hecha a mano para acompañar tu idea.</p>
     <a onclick="mostrarPantalla('encargo')" class="hero-cta"><span class="cta-icon">🎊</span>¡Quiero mi Piñata!</a>
     <div class="hero-badges">
       <div class="hbadge"><span class="hbadge-n">100%</span><span class="hbadge-l">Hecha a mano</span></div>
       <div class="hbadge"><span class="hbadge-n">✦</span><span class="hbadge-l">Pieza única</span></div>
-      <div class="hbadge"><span class="hbadge-n">Ibiza</span><span class="hbadge-l">Entrega en la isla</span></div>
+      <div class="hbadge"><span class="hbadge-n">Ibiza</span><span class="hbadge-l">Consulta para envíos</span></div>
     </div>
   </div>
 </section>
@@ -270,19 +281,22 @@ footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 52px 80
   <div class="carrusel-header">
     <div class="eyebrow eyebrow-center">Galería de trabajo</div>
     <h2>Piezas que enamoran <em>y se conservan</em></h2>
-    <p class="section-sub">Toca una foto para verla en grande. Muchos clientes las guardan de recuerdo.</p>
+    <p class="section-sub">Toca una foto para verla en grande. Explora los personajes, colores y temas.</p>
   </div>
   <div class="carrusel-wrap">
     <button class="carrusel-btn btn-prev" id="prev">‹</button>
     <div class="carrusel-track-outer">
       <div class="carrusel-track" id="track">
-        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/rana.jpg','Rana René · Diseño estrella')"><img src="fotos/rana.jpg" alt="Rana René"/><span class="slide-tag fav">⭐ La favorita</span></div><div class="slide-body"><h4>Rana René</h4><p>La más querida en redes 🐸 Si sueñas un personaje, lo hacemos realidad.</p></div></div>
-        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/cassette.jpg','Cinta de cassette · Juan 40')"><img src="fotos/cassette.jpg" alt="Cassette 40"/><span class="slide-tag">Adultos · 40</span></div><div class="slide-body"><h4>Cassette · 40 años</h4><p>Temática años 80, personalizada. Aún la conservan.</p></div></div>
-        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/astronauta.jpg','Planeta astronauta · Chloe 8')"><img src="fotos/astronauta.jpg" alt="Astronauta"/><span class="slide-tag">Infantil</span></div><div class="slide-body"><h4>Astronauta · Chloe 8</h4><p>Piñata espacial con detalles holográficos.</p></div></div>
-        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/mariposa.jpg','Mariposa con flores de papel')"><img src="fotos/mariposa.jpg" alt="Mariposa"/><span class="slide-tag">Botánico</span></div><div class="slide-body"><h4>Mariposa botánica</h4><p>Con flores artesanales de papel. Pieza única.</p></div></div>
-        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/goku.jpg','Goku gigante · Dragon Ball')"><img src="fotos/goku.jpg" alt="Goku"/><span class="slide-tag">Gigante</span></div><div class="slide-body"><h4>Goku gigante</h4><p>Más de 80cm de puro detalle. De las que se guardan.</p></div></div>
-        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/numero3.jpg','Número 3 · Hada Alma')"><img src="fotos/numero3.jpg" alt="Número 3"/><span class="slide-tag">Número</span></div><div class="slide-body"><h4>Número 3 · Hada</h4><p>Número gigante con hada y flores.</p></div></div>
+        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/rana.jpg','Rana René · Piñata de personaje')"><img src="fotos/rana.jpg" alt="Rana René"/><span class="slide-tag">Personaje</span></div><div class="slide-body"><h4>Rana René</h4><p>Rana verde con lazo de cuadros y detalles en rojo.</p></div></div>
         <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/stitch.jpg','Stitch · Edición especial')"><img src="fotos/stitch.jpg" alt="Stitch"/><span class="slide-tag">Personaje</span></div><div class="slide-body"><h4>Stitch</h4><p>Con flor hawaiana. Azul marino y detalles.</p></div></div>
+        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/mariposa.jpg','Mariposa con flores de papel')"><img src="fotos/mariposa.jpg" alt="Mariposa"/><span class="slide-tag">Botánico</span></div><div class="slide-body"><h4>Mariposa botánica</h4><p>Con flores artesanales de papel. Pieza única.</p></div></div>
+        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/astronauta.jpg','Planeta astronauta · Chloe 8')"><img src="fotos/astronauta.jpg" alt="Astronauta"/><span class="slide-tag">Infantil</span></div><div class="slide-body"><h4>Astronauta · Chloe 8</h4><p>Piñata espacial con detalles holográficos.</p></div></div>
+        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/goku.jpg','Goku gigante · Dragon Ball')"><img src="fotos/goku.jpg" alt="Goku"/><span class="slide-tag">Gigante</span></div><div class="slide-body"><h4>Goku gigante</h4><p>Personaje de Dragon Ball con su traje naranja.</p></div></div>
+        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/numero3.jpg','Número 3 · Hada Alma')"><img src="fotos/numero3.jpg" alt="Número 3"/><span class="slide-tag">Número</span></div><div class="slide-body"><h4>Número 3 · Hada</h4><p>Número gigante con hada y flores.</p></div></div>
+        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/numero40.jpg','Número 40 · Negro y dorado')"><img src="fotos/numero40.jpg" alt="Piñata del número 40 en negro y dorado"/><span class="slide-tag">Cumple adulto</span></div><div class="slide-body"><h4>Número 40</h4><p>Pieza de gran tamaño y con volumen, en negro y dorado, con estrellas y cintas.</p></div></div>
+        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/cassette.jpg','Cinta de cassette · Juan 40')"><img src="fotos/cassette.jpg" alt="Cassette 40"/><span class="slide-tag">Adultos · 40</span></div><div class="slide-body"><h4>Cassette · 40 años</h4><p>Cassette de temática años 80 para un 40 cumpleaños, con nombre y edad personalizados.</p></div></div>
+        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/elefante-baby-shower.jpg','Elefante · Baby shower')"><img src="fotos/elefante-baby-shower.jpg" alt="Piñata de elefante gris con orejas azules y lazo para baby shower"/><span class="slide-tag">Baby shower</span></div><div class="slide-body"><h4>Elefante · Baby shower</h4><p>Elefante gris con orejas azules y lazo. En este encargo, el interior se preparó para colocar los regalitos del baby shower.</p></div></div>
+        <div class="carrusel-slide"><div class="slide-img" onclick="openLightbox('fotos/demogorgon.jpg','Demogorgon · Stranger Things')"><img src="fotos/demogorgon.jpg" alt="Piñata de Demogorgon de Stranger Things en rojo con dientes blancos"/><span class="slide-tag">Personaje</span></div><div class="slide-body"><h4>Demogorgon</h4><p>El Demogorgon de Stranger Things en rojo, con dientes blancos, bordes negros y mucho volumen.</p></div></div>
       </div>
     </div>
     <button class="carrusel-btn btn-next" id="next">›</button>
@@ -317,22 +331,16 @@ footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 52px 80
   <div class="como-grid">
     <div class="acordeon" id="acordeon">
       <div class="ac-item active"><div class="ac-header"><div class="ac-num">1</div><span class="ac-title">Cuéntanos tu idea</span><span class="ac-arrow">↓</span></div><div class="ac-body"><p>Rellenas el formulario con lo que celebras, la fecha, el personaje o temática y tus colores. Con eso Carolina ya sabe por dónde empezar.</p><span class="ac-tag">📩 Te llega directo a su WhatsApp</span></div></div>
-      <div class="ac-item"><div class="ac-header"><div class="ac-num">2</div><span class="ac-title">Carolina te da el ok</span><span class="ac-arrow">↓</span></div><div class="ac-body"><p>Ella revisa tu idea y la agenda, y en menos de 24h te confirma por WhatsApp si es viable, el precio y la fecha. La reserva cuenta desde ese ok.</p><span class="ac-tag">⏱ Mínimo 2 semanas de antelación</span></div></div>
-      <div class="ac-item"><div class="ac-header"><div class="ac-num">3</div><span class="ac-title">¡A lucirla!</span><span class="ac-arrow">↓</span></div><div class="ac-body"><p>La recoges gratis en Sant Jordi o te la llevamos a domicilio. Es una pieza para presumir en tu fiesta y quedártela de recuerdo 😍</p><span class="ac-tag">📍 Entrega en toda la isla</span></div></div>
+      <div class="ac-item"><div class="ac-header"><div class="ac-num">2</div><span class="ac-title">Carolina te da el ok</span><span class="ac-arrow">↓</span></div><div class="ac-body"><p>Ella revisa tu idea y la agenda, y en menos de 24h te confirma por WhatsApp si es viable, el precio y la fecha. La reserva cuenta desde ese ok.</p><span class="ac-tag">⏱ Mínimo 2 semanas de antelación, según disponibilidad</span></div></div>
+      <div class="ac-item"><div class="ac-header"><div class="ac-num">3</div><span class="ac-title">¡A lucirla!</span><span class="ac-arrow">↓</span></div><div class="ac-body"><p>La recoges gratis en Sant Jordi o te la llevamos a domicilio. Es una pieza para presumir en tu fiesta y quedártela de recuerdo 😍</p><span class="ac-tag">📍 Ibiza · Consulta para envíos</span></div></div>
     </div>
     <div class="cupos-panel">
       <div class="cupos-panel-head">
         <span class="cupos-panel-eyebrow">Disponibilidad</span>
-        <h3>Solo <em>4 piñatas</em><br>cada mes</h3>
-        <p>Para dedicarle a cada una el tiempo y el mimo que merece.</p>
+        <h3>Hasta <em>6 encargos</em><br>al mes</h3>
+        <p>Para dedicarle a cada pieza el tiempo y el mimo que merece.</p>
       </div>
-      <div class="cupos-dots-row">
-        <div class="cupo-mini taken">🎉</div>
-        <div class="cupo-mini taken">🎉</div>
-        <div class="cupo-mini taken">🎉</div>
-        <div class="cupo-mini free">✨</div>
-      </div>
-      <p class="cupos-panel-status"><strong>1 plaza libre</strong> este mes</p>
+      <p class="cupos-panel-status"><strong>¿Tienes una celebración en mente?</strong> Escríbeme: revisamos la fecha y los detalles antes de confirmar tu encargo.</p>
       <a onclick="mostrarPantalla('encargo')" class="cupos-panel-btn">Reservar la mía</a>
     </div>
   </div>
@@ -348,7 +356,8 @@ footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 52px 80
   <div class="form-wrap">
     <div class="form-header">
       <div class="eyebrow eyebrow-center">Pide tu encargo</div>
-      <h2>¿Tienes una fiesta <em>en mente?</em></h2>
+      <h2>¿Tienes una celebración <em>en mente?</em></h2>
+      <p class="section-sub">Presupuesto personalizado según el diseño, el tamaño y los detalles.</p>
       <p class="section-sub">Rellena esto y al enviar se abre WhatsApp con tu mensaje listo. Carolina te responde en menos de 24h.</p>
     </div>
     <div class="form-card">
@@ -363,6 +372,7 @@ footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 52px 80
             <option value="">Selecciona...</option>
             <option>Cumpleaños infantil</option>
             <option>Cumpleaños adulto (30, 40, 50...)</option>
+            <option>Baby shower</option>
             <option>Boda o aniversario</option>
             <option>Evento corporativo</option>
             <option>Otra celebración</option>
@@ -387,8 +397,8 @@ footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 52px 80
           <select id="f_zona">
             <option value="">Selecciona...</option>
             <option>Recojo en Sant Jordi (gratis)</option>
-            <option>Domicilio en Ibiza (5€)</option>
-            <option>Envío a península (coste según tamaño y destino)</option>
+            <option>Domicilio en Ibiza (a partir de 5 €, según la zona)</option>
+            <option>Consulta para envíos</option>
           </select>
         </div>
       </div>
@@ -400,7 +410,7 @@ footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 52px 80
         <span style="font-size:22px;">💬</span> Enviar mi encargo por WhatsApp
       </button>
       <p class="form-alt">¿Prefieres email? <a href="mailto:carolina.foti@gmail.com?subject=Encargo%20de%20pi%C3%B1ata">Escríbele aquí</a></p>
-      <p class="form-nota">Trabajo exclusivamente bajo encargo · Plazas limitadas cada mes · Mínimo 2 semanas de antelación<br>En Ibiza: recogida gratis en Sant Jordi o domicilio por 5€ · Envíos a península con coste según el tamaño de la pieza y el destino</p>
+      <p class="form-nota">Trabajo exclusivamente bajo encargo · Plazas limitadas cada mes · Mínimo 2 semanas de antelación, según disponibilidad<br>En Ibiza: recogida gratis en Sant Jordi o domicilio a partir de 5 €, según la zona · Consulta para envíos</p>
     </div>
   </div>
 </section>
@@ -411,7 +421,7 @@ footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 52px 80
 <footer>
   <div class="footer-left">
     <div class="brand">Dulcemente<em>Colorido</em></div>
-    <p>© 2025 · Piñatas artesanales · Ibiza · by Carolina ♡</p>
+    <p>© 2026 · Piñatas artesanales · Ibiza · by Carolina ♡</p>
   </div>
   <div class="footer-links">
     <a onclick="mostrarPantalla('galeria')">Galería</a>
